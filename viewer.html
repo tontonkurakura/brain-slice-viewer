@@ -71,13 +71,36 @@
   .rgn.on{background:#2b6fd6;color:#fff}
   .sw{width:12px;height:12px;border-radius:3px;flex-shrink:0;
     box-shadow:0 0 0 1px rgba(255,255,255,.22) inset}
-  /* 出典と注意書き。画面の下に 1 行。読む邪魔をしないよう、当たり判定は持たせない
+  /* ライセンスと注意事項の入口。右下に小さく置く。囲みは当たり判定を持たない
      （下のモデルにカーソルが届く）。狭い画面では下のバーの中へ移す。 */
-  #note{position:fixed;left:50%;bottom:9px;transform:translateX(-50%);z-index:10;
-    pointer-events:none;font-size:11px;line-height:1.5;color:#6f82a8;text-align:center;
-    max-width:92vw;white-space:nowrap}
-  #note span+span::before{content:'／';color:#465773;margin:0 .45em}
-  #note b{color:#8fa3cc;font-weight:600}
+  #note{position:fixed;right:14px;bottom:10px;z-index:10;pointer-events:none}
+  #licBtn{pointer-events:auto;background:none;border:0;padding:2px 4px;cursor:pointer;
+    font:inherit;font-size:11px;color:#5d6f92;letter-spacing:.02em}
+  #licBtn:hover{color:#9ab0df;text-decoration:underline}
+
+  /* モーダル。パネル類より前に出す（板 30 / バー 20 より上） */
+  #lic{display:none;position:fixed;inset:0;z-index:40;padding:20px;
+    background:rgba(4,6,11,.66);align-items:center;justify-content:center}
+  #lic.on{display:flex}
+  #lic .box{position:relative;width:560px;max-width:100%;max-height:84vh;overflow-y:auto;
+    background:#131a2a;border:1px solid #2b3550;border-radius:12px;
+    padding:22px 24px 24px;font-size:13px;line-height:1.8;color:#c6d3ee}
+  #lic h2{margin:0 0 4px;font-size:16px;color:#eaf1ff}
+  #lic .sub{margin:0 0 16px;font-size:12px;color:#8fa3cc}
+  #lic h3{margin:20px 0 6px;font-size:12px;color:#93a6cf;letter-spacing:.04em}
+  #lic ul{margin:0;padding-left:1.15em}
+  #lic li{margin:3px 0}
+  #lic table{border-collapse:collapse;width:100%;font-size:12px;line-height:1.6}
+  #lic th,#lic td{border-bottom:1px solid #232e47;padding:6px 8px 6px 0;
+    text-align:left;vertical-align:top}
+  #lic th{color:#93a6cf;font-weight:600;white-space:nowrap}
+  #lic a{color:#7fb0ff}
+  #lic .cite{margin-top:10px;padding:10px 12px;background:#0e1524;border-radius:8px;
+    font-size:11.5px;line-height:1.7;color:#9ab0df}
+  #lic .x{position:absolute;top:9px;right:11px;width:30px;height:30px;padding:0;
+    border:0;border-radius:8px;background:none;color:#8fa3cc;font-size:20px;
+    line-height:1;cursor:pointer}
+  #lic .x:hover{background:#1e2942;color:#eaf1ff}
   /* SVG は幅・高さを明示しないと既定の 300x150 になり、線がクリップされる */
   #lead{position:fixed;left:0;top:0;width:100vw;height:100vh;
     z-index:25;pointer-events:none;display:none;overflow:visible}
@@ -132,7 +155,7 @@
   @media (max-width:720px){
     #list{width:170px;max-height:52vh;font-size:12.5px;padding:10px 5px 9px 11px}
     .rgn{font-size:12.5px;padding-left:8px}
-    #note{font-size:10px;white-space:normal}
+    #lic .box{padding:18px 16px 20px}
   }
 
   /* ───────── 狭い画面（スマホ）─────────
@@ -158,10 +181,10 @@
   #bar #posBlock .lbl{display:none}
   #bar #posBlock .posrow{flex:1;min-width:0}
   #bar .pend{font-size:13px;color:#a8bce4}
-  /* バーの中に入れたときは、固定配置をやめて最後の行として流す */
-  #bar #note{position:static;transform:none;max-width:none;font-size:10px;margin:0 auto;
-    white-space:normal}
-  body.narrow #note .wide{display:none}      /* 狭い画面では出典を 2 つに絞る */
+  /* 狭い画面では設定シート（⚙）の末尾へ入れる。バーに足すと行が増えるか、
+     モードのボタンが縮んで「断面」が 2 行に折れる（実際にそうなった）。 */
+  #panel #note{position:static;margin-top:14px;padding-top:12px;border-top:1px solid #232e47}
+  #panel #licBtn{font-size:12px;padding:0}
   #scrim{display:none;position:fixed;inset:0;z-index:25;background:rgba(4,6,11,.5)}
   #scrim.on{display:block}
 
@@ -266,14 +289,46 @@
 </div>
 <div id="scrim"></div>
 
-<!-- 出典と注意書き。狭い画面では relayout() が下のバーへ移す（複製しない）。
-     .wide は狭い画面で落とす。落ちてもよい順に**後ろから**並べてある
-     （区切りは span+span の ::before で入れるので、前を消すと先頭に出てしまう） -->
-<div id="note">
-  <span><span class="wide">教育・参照用。</span>臨床判断には使わない</span
-  ><span><span class="wide">血管支配 </span><b>JHU Arterial Atlas</b> CC BY-SA 4.0</span
-  ><span class="wide">MNI152 標準脳（個人の MRI ではない）</span
-  ><span class="wide">three.js MIT</span>
+<!-- ライセンスと注意事項の入口。狭い画面では relayout() が下のバーへ移す（複製しない） -->
+<div id="note"><button id="licBtn" type="button" aria-haspopup="dialog"
+  >ライセンス<span class="wide">と注意事項</span></button></div>
+
+<div id="lic">
+  <div class="box" role="dialog" aria-modal="true" aria-labelledby="licTtl">
+    <button class="x" id="licX" type="button" aria-label="閉じる">×</button>
+    <h2 id="licTtl">ライセンスと注意事項</h2>
+    <p class="sub">標準脳の MRI 断面と 3D モデルを同じ座標で重ねて見るためのビューアです。</p>
+
+    <h3>ご利用にあたって</h3>
+    <ul>
+      <li><b>診断や臨床判断の材料には使用しないでください。</b>教育と参照を目的としています。</li>
+      <li>表示しているのは標準脳 1 例です。個人の MRI ではなく、患者情報は含まれません。</li>
+      <li>領域の区分は自動処理（FastSurfer）の結果で、個々の症例に当てはまるものではありません。</li>
+      <li>左右の向きは neurological（画像の左が患者の左）です。</li>
+    </ul>
+
+    <h3>データと出典</h3>
+    <table>
+      <tr><th>MRI（標準脳）</th>
+          <td>MNI152（Connectome Workbench 由来の平均脳）<br>各配布元の条件に従います</td></tr>
+      <tr><th>解剖学領域</th>
+          <td>DKT 分割（FreeSurfer / FastSurfer）<br>各配布元の条件に従います</td></tr>
+      <tr><th>血管支配領域</th>
+          <td><a href="https://github.com/Chin-Fu-Liu/Arterial_Atlas" target="_blank"
+                 rel="noopener noreferrer">JHU Arterial Atlas</a>（Level 1・32 領域）<br>
+              <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"
+                 rel="noopener noreferrer">CC BY-SA 4.0</a></td></tr>
+      <tr><th>3D 描画</th>
+          <td><a href="https://threejs.org/" target="_blank"
+                 rel="noopener noreferrer">three.js</a> r163（同梱・無改変）<br>MIT License</td></tr>
+    </table>
+    <p class="cite">
+      血管支配領域の断面画像と 3D モデルは JHU Arterial Atlas から派生したもので、
+      CC BY-SA 4.0 が継承されます。<br>
+      Liu C-F, et al. <i>Digital 3D Brain MRI Arterial Territories Atlas.</i>
+      Scientific Data 10, 74 (2023). © 2021 The Johns Hopkins University
+    </p>
+  </div>
 </div>
 
 <!-- 引き出し線。色の線の下に黒い線を敷いて、断面のどんな色の上でも見えるようにする -->
@@ -1188,7 +1243,18 @@ document.querySelectorAll('#atlas button').forEach(b => {
   b.onclick = () => setAtlas(b.dataset.a);
 });
 
-addEventListener('keydown', e => { if (e.key === 'Escape') clearSelection(); });
+/* ライセンスと注意事項。モーダルは Escape と外側の押下でも閉じる。
+   Escape は開いているときだけモーダルに使う（普段は選択の解除）。 */
+const licEl = document.getElementById('lic');
+const closeLic = () => licEl.classList.remove('on');
+document.getElementById('licBtn').onclick = () => licEl.classList.add('on');
+document.getElementById('licX').onclick = closeLic;
+licEl.onclick = e => { if (e.target === licEl) closeLic(); };
+
+addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (licEl.classList.contains('on')) closeLic(); else clearSelection();
+});
 
 /* ───────────── ホバーによる領域表示 ─────────────
    断面と 3D で判定方法が違う。
@@ -1880,7 +1946,7 @@ function relayout(){
     document.getElementById('barMode').appendChild(takeHome(modeEl));
     document.getElementById('barPos').insertBefore(takeHome(posBlock),
                                                   document.getElementById('nextS'));
-    barEl.appendChild(takeHome(noteEl));          // 注意書きはバーの最後の行にする
+    panelEl.appendChild(takeHome(noteEl));        // 設定シートの末尾へ
   } else if (homes.size) {
     goHome(modeEl); goHome(posBlock); goHome(noteEl);
   }
