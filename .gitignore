@@ -1,0 +1,4 @@
+.DS_Store
+*.py[co]
+__pycache__/
+_*.html

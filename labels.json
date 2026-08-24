@@ -1,0 +1,2537 @@
+{
+  "ctx-lh-caudalanteriorcingulate": {
+    "ja": "左尾側前帯状皮質",
+    "ja_short": "尾側前帯状皮質",
+    "en": "Left Caudal Anterior Cingulate",
+    "en_short": "Caudal Anterior Cingulate",
+    "side": "L",
+    "base": "caudalanteriorcingulate",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      125,
+      100,
+      160
+    ],
+    "slice": {
+      "x": -5.34,
+      "y": 21.25,
+      "z": 29.63
+    }
+  },
+  "ctx-rh-caudalanteriorcingulate": {
+    "ja": "右尾側前帯状皮質",
+    "ja_short": "尾側前帯状皮質",
+    "en": "Right Caudal Anterior Cingulate",
+    "en_short": "Caudal Anterior Cingulate",
+    "side": "R",
+    "base": "caudalanteriorcingulate",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      125,
+      100,
+      160
+    ],
+    "slice": {
+      "x": 4.25,
+      "y": 21.25,
+      "z": 29.63
+    }
+  },
+  "ctx-lh-caudalmiddlefrontal": {
+    "ja": "左尾側中前頭回",
+    "ja_short": "尾側中前頭回",
+    "en": "Left Caudal Middle Frontal",
+    "en_short": "Caudal Middle Frontal",
+    "side": "L",
+    "base": "caudalmiddlefrontal",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      100,
+      25,
+      0
+    ],
+    "slice": {
+      "x": -37.79,
+      "y": 12.02,
+      "z": 48.81
+    }
+  },
+  "ctx-rh-caudalmiddlefrontal": {
+    "ja": "右尾側中前頭回",
+    "ja_short": "尾側中前頭回",
+    "en": "Right Caudal Middle Frontal",
+    "en_short": "Caudal Middle Frontal",
+    "side": "R",
+    "base": "caudalmiddlefrontal",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      100,
+      25,
+      0
+    ],
+    "slice": {
+      "x": 36.7,
+      "y": 12.02,
+      "z": 48.81
+    }
+  },
+  "ctx-lh-cuneus": {
+    "ja": "左楔部",
+    "ja_short": "楔部",
+    "en": "Left Cuneus",
+    "en_short": "Cuneus",
+    "side": "L",
+    "base": "cuneus",
+    "atlas": "dkt",
+    "group": "後頭葉",
+    "color": [
+      220,
+      20,
+      100
+    ],
+    "slice": {
+      "x": -6.07,
+      "y": -80.16,
+      "z": 22.63
+    }
+  },
+  "ctx-rh-cuneus": {
+    "ja": "右楔部",
+    "ja_short": "楔部",
+    "en": "Right Cuneus",
+    "en_short": "Cuneus",
+    "side": "R",
+    "base": "cuneus",
+    "atlas": "dkt",
+    "group": "後頭葉",
+    "color": [
+      220,
+      20,
+      100
+    ],
+    "slice": {
+      "x": 7.94,
+      "y": -80.16,
+      "z": 22.63
+    }
+  },
+  "ctx-lh-entorhinal": {
+    "ja": "左嗅内皮質",
+    "ja_short": "嗅内皮質",
+    "en": "Left Entorhinal",
+    "en_short": "Entorhinal",
+    "side": "L",
+    "base": "entorhinal",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      220,
+      20,
+      10
+    ],
+    "slice": {
+      "x": -23.04,
+      "y": -5.67,
+      "z": -33.05
+    }
+  },
+  "ctx-rh-entorhinal": {
+    "ja": "右嗅内皮質",
+    "ja_short": "嗅内皮質",
+    "en": "Right Entorhinal",
+    "en_short": "Entorhinal",
+    "side": "R",
+    "base": "entorhinal",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      220,
+      20,
+      10
+    ],
+    "slice": {
+      "x": 21.95,
+      "y": -5.67,
+      "z": -33.05
+    }
+  },
+  "ctx-lh-fusiform": {
+    "ja": "左紡錘状回",
+    "ja_short": "紡錘状回",
+    "en": "Left Fusiform",
+    "en_short": "Fusiform",
+    "side": "L",
+    "base": "fusiform",
+    "atlas": "dkt",
+    "group": "側頭葉",
+    "color": [
+      180,
+      220,
+      140
+    ],
+    "slice": {
+      "x": -36.31,
+      "y": -46.97,
+      "z": -18.67
+    }
+  },
+  "ctx-rh-fusiform": {
+    "ja": "右紡錘状回",
+    "ja_short": "紡錘状回",
+    "en": "Right Fusiform",
+    "en_short": "Fusiform",
+    "side": "R",
+    "base": "fusiform",
+    "atlas": "dkt",
+    "group": "側頭葉",
+    "color": [
+      180,
+      220,
+      140
+    ],
+    "slice": {
+      "x": 35.23,
+      "y": -46.97,
+      "z": -18.67
+    }
+  },
+  "ctx-lh-inferiorparietal": {
+    "ja": "左下頭頂小葉",
+    "ja_short": "下頭頂小葉",
+    "en": "Left Inferior Parietal",
+    "en_short": "Inferior Parietal",
+    "side": "L",
+    "base": "inferiorparietal",
+    "atlas": "dkt",
+    "group": "頭頂葉",
+    "color": [
+      220,
+      60,
+      220
+    ],
+    "slice": {
+      "x": -42.21,
+      "y": -66.52,
+      "z": 32.59
+    }
+  },
+  "ctx-rh-inferiorparietal": {
+    "ja": "右下頭頂小葉",
+    "ja_short": "下頭頂小葉",
+    "en": "Right Inferior Parietal",
+    "en_short": "Inferior Parietal",
+    "side": "R",
+    "base": "inferiorparietal",
+    "atlas": "dkt",
+    "group": "頭頂葉",
+    "color": [
+      220,
+      60,
+      220
+    ],
+    "slice": {
+      "x": 46.29,
+      "y": -66.52,
+      "z": 32.59
+    }
+  },
+  "ctx-lh-inferiortemporal": {
+    "ja": "左下側頭回",
+    "ja_short": "下側頭回",
+    "en": "Left Inferior Temporal",
+    "en_short": "Inferior Temporal",
+    "side": "L",
+    "base": "inferiortemporal",
+    "atlas": "dkt",
+    "group": "側頭葉",
+    "color": [
+      180,
+      40,
+      120
+    ],
+    "slice": {
+      "x": -50.32,
+      "y": -24.85,
+      "z": -27.52
+    }
+  },
+  "ctx-rh-inferiortemporal": {
+    "ja": "右下側頭回",
+    "ja_short": "下側頭回",
+    "en": "Right Inferior Temporal",
+    "en_short": "Inferior Temporal",
+    "side": "R",
+    "base": "inferiortemporal",
+    "atlas": "dkt",
+    "group": "側頭葉",
+    "color": [
+      180,
+      40,
+      120
+    ],
+    "slice": {
+      "x": 50.71,
+      "y": -24.85,
+      "z": -27.52
+    }
+  },
+  "ctx-lh-isthmuscingulate": {
+    "ja": "左帯状回峡",
+    "ja_short": "帯状回峡",
+    "en": "Left Isthmus Cingulate",
+    "en_short": "Isthmus Cingulate",
+    "side": "L",
+    "base": "isthmuscingulate",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      140,
+      20,
+      140
+    ],
+    "slice": {
+      "x": -6.07,
+      "y": -45.87,
+      "z": 23.0
+    }
+  },
+  "ctx-rh-isthmuscingulate": {
+    "ja": "右帯状回峡",
+    "ja_short": "帯状回峡",
+    "en": "Right Isthmus Cingulate",
+    "en_short": "Isthmus Cingulate",
+    "side": "R",
+    "base": "isthmuscingulate",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      140,
+      20,
+      140
+    ],
+    "slice": {
+      "x": 6.46,
+      "y": -45.87,
+      "z": 23.0
+    }
+  },
+  "ctx-lh-lateraloccipital": {
+    "ja": "左外側後頭皮質",
+    "ja_short": "外側後頭皮質",
+    "en": "Left Lateral Occipital",
+    "en_short": "Lateral Occipital",
+    "side": "L",
+    "base": "lateraloccipital",
+    "atlas": "dkt",
+    "group": "後頭葉",
+    "color": [
+      20,
+      30,
+      140
+    ],
+    "slice": {
+      "x": -33.36,
+      "y": -88.28,
+      "z": 1.25
+    }
+  },
+  "ctx-rh-lateraloccipital": {
+    "ja": "右外側後頭皮質",
+    "ja_short": "外側後頭皮質",
+    "en": "Right Lateral Occipital",
+    "en_short": "Lateral Occipital",
+    "side": "R",
+    "base": "lateraloccipital",
+    "atlas": "dkt",
+    "group": "後頭葉",
+    "color": [
+      20,
+      30,
+      140
+    ],
+    "slice": {
+      "x": 35.23,
+      "y": -88.28,
+      "z": 1.25
+    }
+  },
+  "ctx-lh-lateralorbitofrontal": {
+    "ja": "左外側眼窩前頭皮質",
+    "ja_short": "外側眼窩前頭皮質",
+    "en": "Left Lateral Orbitofrontal",
+    "en_short": "Lateral Orbitofrontal",
+    "side": "L",
+    "base": "lateralorbitofrontal",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      35,
+      75,
+      50
+    ],
+    "slice": {
+      "x": -23.77,
+      "y": 34.89,
+      "z": -19.04
+    }
+  },
+  "ctx-rh-lateralorbitofrontal": {
+    "ja": "右外側眼窩前頭皮質",
+    "ja_short": "外側眼窩前頭皮質",
+    "en": "Right Lateral Orbitofrontal",
+    "en_short": "Lateral Orbitofrontal",
+    "side": "R",
+    "base": "lateralorbitofrontal",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      35,
+      75,
+      50
+    ],
+    "slice": {
+      "x": 21.95,
+      "y": 34.89,
+      "z": -19.04
+    }
+  },
+  "ctx-lh-lingual": {
+    "ja": "左舌状回",
+    "ja_short": "舌状回",
+    "en": "Left Lingual",
+    "en_short": "Lingual",
+    "side": "L",
+    "base": "lingual",
+    "atlas": "dkt",
+    "group": "後頭葉",
+    "color": [
+      225,
+      140,
+      140
+    ],
+    "slice": {
+      "x": -14.19,
+      "y": -66.52,
+      "z": -5.39
+    }
+  },
+  "ctx-rh-lingual": {
+    "ja": "右舌状回",
+    "ja_short": "舌状回",
+    "en": "Right Lingual",
+    "en_short": "Lingual",
+    "side": "R",
+    "base": "lingual",
+    "atlas": "dkt",
+    "group": "後頭葉",
+    "color": [
+      225,
+      140,
+      140
+    ],
+    "slice": {
+      "x": 13.84,
+      "y": -66.52,
+      "z": -5.39
+    }
+  },
+  "ctx-lh-medialorbitofrontal": {
+    "ja": "左内側眼窩前頭皮質",
+    "ja_short": "内側眼窩前頭皮質",
+    "en": "Left Medial Orbitofrontal",
+    "en_short": "Medial Orbitofrontal",
+    "side": "L",
+    "base": "medialorbitofrontal",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      200,
+      35,
+      75
+    ],
+    "slice": {
+      "x": -5.34,
+      "y": 36.37,
+      "z": -19.04
+    }
+  },
+  "ctx-rh-medialorbitofrontal": {
+    "ja": "右内側眼窩前頭皮質",
+    "ja_short": "内側眼窩前頭皮質",
+    "en": "Right Medial Orbitofrontal",
+    "en_short": "Medial Orbitofrontal",
+    "side": "R",
+    "base": "medialorbitofrontal",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      200,
+      35,
+      75
+    ],
+    "slice": {
+      "x": 3.51,
+      "y": 36.37,
+      "z": -19.04
+    }
+  },
+  "ctx-lh-middletemporal": {
+    "ja": "左中側頭回",
+    "ja_short": "中側頭回",
+    "en": "Left Middle Temporal",
+    "en_short": "Middle Temporal",
+    "side": "L",
+    "base": "middletemporal",
+    "atlas": "dkt",
+    "group": "側頭葉",
+    "color": [
+      160,
+      100,
+      50
+    ],
+    "slice": {
+      "x": -58.44,
+      "y": -26.69,
+      "z": -10.92
+    }
+  },
+  "ctx-rh-middletemporal": {
+    "ja": "右中側頭回",
+    "ja_short": "中側頭回",
+    "en": "Right Middle Temporal",
+    "en_short": "Middle Temporal",
+    "side": "R",
+    "base": "middletemporal",
+    "atlas": "dkt",
+    "group": "側頭葉",
+    "color": [
+      160,
+      100,
+      50
+    ],
+    "slice": {
+      "x": 58.09,
+      "y": -26.69,
+      "z": -10.92
+    }
+  },
+  "ctx-lh-parahippocampal": {
+    "ja": "左海馬傍回",
+    "ja_short": "海馬傍回",
+    "en": "Left Parahippocampal",
+    "en_short": "Parahippocampal",
+    "side": "L",
+    "base": "parahippocampal",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      20,
+      220,
+      60
+    ],
+    "slice": {
+      "x": -24.51,
+      "y": -31.86,
+      "z": -17.56
+    }
+  },
+  "ctx-rh-parahippocampal": {
+    "ja": "右海馬傍回",
+    "ja_short": "海馬傍回",
+    "en": "Right Parahippocampal",
+    "en_short": "Parahippocampal",
+    "side": "R",
+    "base": "parahippocampal",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      20,
+      220,
+      60
+    ],
+    "slice": {
+      "x": 24.16,
+      "y": -31.86,
+      "z": -17.56
+    }
+  },
+  "ctx-lh-paracentral": {
+    "ja": "左中心傍小葉",
+    "ja_short": "中心傍小葉",
+    "en": "Left Paracentral",
+    "en_short": "Paracentral",
+    "side": "L",
+    "base": "paracentral",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      60,
+      220,
+      60
+    ],
+    "slice": {
+      "x": -6.07,
+      "y": -25.59,
+      "z": 58.4
+    }
+  },
+  "ctx-rh-paracentral": {
+    "ja": "右中心傍小葉",
+    "ja_short": "中心傍小葉",
+    "en": "Right Paracentral",
+    "en_short": "Paracentral",
+    "side": "R",
+    "base": "paracentral",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      60,
+      220,
+      60
+    ],
+    "slice": {
+      "x": 5.73,
+      "y": -25.59,
+      "z": 58.4
+    }
+  },
+  "ctx-lh-parsopercularis": {
+    "ja": "左弁蓋部",
+    "ja_short": "弁蓋部",
+    "en": "Left Pars Opercularis",
+    "en_short": "Pars Opercularis",
+    "side": "L",
+    "base": "parsopercularis",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      220,
+      180,
+      140
+    ],
+    "slice": {
+      "x": -49.59,
+      "y": 15.71,
+      "z": 12.3
+    }
+  },
+  "ctx-rh-parsopercularis": {
+    "ja": "右弁蓋部",
+    "ja_short": "弁蓋部",
+    "en": "Right Pars Opercularis",
+    "en_short": "Pars Opercularis",
+    "side": "R",
+    "base": "parsopercularis",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      220,
+      180,
+      140
+    ],
+    "slice": {
+      "x": 49.24,
+      "y": 15.71,
+      "z": 12.3
+    }
+  },
+  "ctx-lh-parsorbitalis": {
+    "ja": "左眼窩部",
+    "ja_short": "眼窩部",
+    "en": "Left Pars Orbitalis",
+    "en_short": "Pars Orbitalis",
+    "side": "L",
+    "base": "parsorbitalis",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      20,
+      100,
+      50
+    ],
+    "slice": {
+      "x": -43.69,
+      "y": 32.31,
+      "z": -12.77
+    }
+  },
+  "ctx-rh-parsorbitalis": {
+    "ja": "右眼窩部",
+    "ja_short": "眼窩部",
+    "en": "Right Pars Orbitalis",
+    "en_short": "Pars Orbitalis",
+    "side": "R",
+    "base": "parsorbitalis",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      20,
+      100,
+      50
+    ],
+    "slice": {
+      "x": 43.34,
+      "y": 32.31,
+      "z": -12.77
+    }
+  },
+  "ctx-lh-parstriangularis": {
+    "ja": "左三角部",
+    "ja_short": "三角部",
+    "en": "Left Pars Triangularis",
+    "en_short": "Pars Triangularis",
+    "side": "L",
+    "base": "parstriangularis",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      220,
+      60,
+      20
+    ],
+    "slice": {
+      "x": -48.85,
+      "y": 31.57,
+      "z": 3.46
+    }
+  },
+  "ctx-rh-parstriangularis": {
+    "ja": "右三角部",
+    "ja_short": "三角部",
+    "en": "Right Pars Triangularis",
+    "en_short": "Pars Triangularis",
+    "side": "R",
+    "base": "parstriangularis",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      220,
+      60,
+      20
+    ],
+    "slice": {
+      "x": 49.24,
+      "y": 31.57,
+      "z": 3.46
+    }
+  },
+  "ctx-lh-pericalcarine": {
+    "ja": "左鳥距溝周囲皮質",
+    "ja_short": "鳥距溝周囲皮質",
+    "en": "Left Pericalcarine",
+    "en_short": "Pericalcarine",
+    "side": "L",
+    "base": "pericalcarine",
+    "atlas": "dkt",
+    "group": "後頭葉",
+    "color": [
+      120,
+      100,
+      60
+    ],
+    "slice": {
+      "x": -9.76,
+      "y": -80.53,
+      "z": 7.14
+    }
+  },
+  "ctx-rh-pericalcarine": {
+    "ja": "右鳥距溝周囲皮質",
+    "ja_short": "鳥距溝周囲皮質",
+    "en": "Right Pericalcarine",
+    "en_short": "Pericalcarine",
+    "side": "R",
+    "base": "pericalcarine",
+    "atlas": "dkt",
+    "group": "後頭葉",
+    "color": [
+      120,
+      100,
+      60
+    ],
+    "slice": {
+      "x": 12.36,
+      "y": -80.53,
+      "z": 7.14
+    }
+  },
+  "ctx-lh-postcentral": {
+    "ja": "左中心後回",
+    "ja_short": "中心後回",
+    "en": "Left Postcentral",
+    "en_short": "Postcentral",
+    "side": "L",
+    "base": "postcentral",
+    "atlas": "dkt",
+    "group": "頭頂葉",
+    "color": [
+      220,
+      20,
+      20
+    ],
+    "slice": {
+      "x": -47.37,
+      "y": -21.16,
+      "z": 47.34
+    }
+  },
+  "ctx-rh-postcentral": {
+    "ja": "右中心後回",
+    "ja_short": "中心後回",
+    "en": "Right Postcentral",
+    "en_short": "Postcentral",
+    "side": "R",
+    "base": "postcentral",
+    "atlas": "dkt",
+    "group": "頭頂葉",
+    "color": [
+      220,
+      20,
+      20
+    ],
+    "slice": {
+      "x": 46.29,
+      "y": -21.16,
+      "z": 47.34
+    }
+  },
+  "ctx-lh-posteriorcingulate": {
+    "ja": "左後帯状皮質",
+    "ja_short": "後帯状皮質",
+    "en": "Left Posterior Cingulate",
+    "en_short": "Posterior Cingulate",
+    "side": "L",
+    "base": "posteriorcingulate",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      220,
+      180,
+      220
+    ],
+    "slice": {
+      "x": -4.6,
+      "y": -19.31,
+      "z": 39.96
+    }
+  },
+  "ctx-rh-posteriorcingulate": {
+    "ja": "右後帯状皮質",
+    "ja_short": "後帯状皮質",
+    "en": "Right Posterior Cingulate",
+    "en_short": "Posterior Cingulate",
+    "side": "R",
+    "base": "posteriorcingulate",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      220,
+      180,
+      220
+    ],
+    "slice": {
+      "x": 4.25,
+      "y": -19.31,
+      "z": 39.96
+    }
+  },
+  "ctx-lh-precentral": {
+    "ja": "左中心前回",
+    "ja_short": "中心前回",
+    "en": "Left Precentral",
+    "en_short": "Precentral",
+    "side": "L",
+    "base": "precentral",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      60,
+      20,
+      220
+    ],
+    "slice": {
+      "x": -45.9,
+      "y": -4.94,
+      "z": 41.07
+    }
+  },
+  "ctx-rh-precentral": {
+    "ja": "右中心前回",
+    "ja_short": "中心前回",
+    "en": "Right Precentral",
+    "en_short": "Precentral",
+    "side": "R",
+    "base": "precentral",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      60,
+      20,
+      220
+    ],
+    "slice": {
+      "x": 46.29,
+      "y": -4.94,
+      "z": 41.07
+    }
+  },
+  "ctx-lh-precuneus": {
+    "ja": "左楔前部",
+    "ja_short": "楔前部",
+    "en": "Left Precuneus",
+    "en_short": "Precuneus",
+    "side": "L",
+    "base": "precuneus",
+    "atlas": "dkt",
+    "group": "頭頂葉",
+    "color": [
+      160,
+      140,
+      180
+    ],
+    "slice": {
+      "x": -7.55,
+      "y": -58.41,
+      "z": 39.97
+    }
+  },
+  "ctx-rh-precuneus": {
+    "ja": "右楔前部",
+    "ja_short": "楔前部",
+    "en": "Right Precuneus",
+    "en_short": "Precuneus",
+    "side": "R",
+    "base": "precuneus",
+    "atlas": "dkt",
+    "group": "頭頂葉",
+    "color": [
+      160,
+      140,
+      180
+    ],
+    "slice": {
+      "x": 8.68,
+      "y": -58.41,
+      "z": 39.97
+    }
+  },
+  "ctx-lh-rostralanteriorcingulate": {
+    "ja": "左吻側前帯状皮質",
+    "ja_short": "吻側前帯状皮質",
+    "en": "Left Rostral Anterior Cingulate",
+    "en_short": "Rostral Anterior Cingulate",
+    "side": "L",
+    "base": "rostralanteriorcingulate",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      80,
+      20,
+      140
+    ],
+    "slice": {
+      "x": -5.34,
+      "y": 38.95,
+      "z": -0.6
+    }
+  },
+  "ctx-rh-rostralanteriorcingulate": {
+    "ja": "右吻側前帯状皮質",
+    "ja_short": "吻側前帯状皮質",
+    "en": "Right Rostral Anterior Cingulate",
+    "en_short": "Rostral Anterior Cingulate",
+    "side": "R",
+    "base": "rostralanteriorcingulate",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      80,
+      20,
+      140
+    ],
+    "slice": {
+      "x": 4.25,
+      "y": 38.95,
+      "z": -0.6
+    }
+  },
+  "ctx-lh-rostralmiddlefrontal": {
+    "ja": "左吻側中前頭回",
+    "ja_short": "吻側中前頭回",
+    "en": "Left Rostral Middle Frontal",
+    "en_short": "Rostral Middle Frontal",
+    "side": "L",
+    "base": "rostralmiddlefrontal",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      75,
+      50,
+      125
+    ],
+    "slice": {
+      "x": -39.26,
+      "y": 44.84,
+      "z": 20.05
+    }
+  },
+  "ctx-rh-rostralmiddlefrontal": {
+    "ja": "右吻側中前頭回",
+    "ja_short": "吻側中前頭回",
+    "en": "Right Rostral Middle Frontal",
+    "en_short": "Rostral Middle Frontal",
+    "side": "R",
+    "base": "rostralmiddlefrontal",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      75,
+      50,
+      125
+    ],
+    "slice": {
+      "x": 38.91,
+      "y": 44.84,
+      "z": 20.05
+    }
+  },
+  "ctx-lh-superiorfrontal": {
+    "ja": "左上前頭回",
+    "ja_short": "上前頭回",
+    "en": "Left Superior Frontal",
+    "en_short": "Superior Frontal",
+    "side": "L",
+    "base": "superiorfrontal",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      20,
+      220,
+      160
+    ],
+    "slice": {
+      "x": -12.71,
+      "y": 40.42,
+      "z": 40.34
+    }
+  },
+  "ctx-rh-superiorfrontal": {
+    "ja": "右上前頭回",
+    "ja_short": "上前頭回",
+    "en": "Right Superior Frontal",
+    "en_short": "Superior Frontal",
+    "side": "R",
+    "base": "superiorfrontal",
+    "atlas": "dkt",
+    "group": "前頭葉",
+    "color": [
+      20,
+      220,
+      160
+    ],
+    "slice": {
+      "x": 11.63,
+      "y": 40.42,
+      "z": 40.34
+    }
+  },
+  "ctx-lh-superiorparietal": {
+    "ja": "左上頭頂小葉",
+    "ja_short": "上頭頂小葉",
+    "en": "Left Superior Parietal",
+    "en_short": "Superior Parietal",
+    "side": "L",
+    "base": "superiorparietal",
+    "atlas": "dkt",
+    "group": "頭頂葉",
+    "color": [
+      20,
+      180,
+      140
+    ],
+    "slice": {
+      "x": -25.25,
+      "y": -62.83,
+      "z": 54.34
+    }
+  },
+  "ctx-rh-superiorparietal": {
+    "ja": "右上頭頂小葉",
+    "ja_short": "上頭頂小葉",
+    "en": "Right Superior Parietal",
+    "en_short": "Superior Parietal",
+    "side": "R",
+    "base": "superiorparietal",
+    "atlas": "dkt",
+    "group": "頭頂葉",
+    "color": [
+      20,
+      180,
+      140
+    ],
+    "slice": {
+      "x": 26.38,
+      "y": -62.83,
+      "z": 54.34
+    }
+  },
+  "ctx-lh-superiortemporal": {
+    "ja": "左上側頭回",
+    "ja_short": "上側頭回",
+    "en": "Left Superior Temporal",
+    "en_short": "Superior Temporal",
+    "side": "L",
+    "base": "superiortemporal",
+    "atlas": "dkt",
+    "group": "側頭葉",
+    "color": [
+      140,
+      220,
+      220
+    ],
+    "slice": {
+      "x": -52.54,
+      "y": -5.3,
+      "z": -6.5
+    }
+  },
+  "ctx-rh-superiortemporal": {
+    "ja": "右上側頭回",
+    "ja_short": "上側頭回",
+    "en": "Right Superior Temporal",
+    "en_short": "Superior Temporal",
+    "side": "R",
+    "base": "superiortemporal",
+    "atlas": "dkt",
+    "group": "側頭葉",
+    "color": [
+      140,
+      220,
+      220
+    ],
+    "slice": {
+      "x": 51.45,
+      "y": -5.3,
+      "z": -6.5
+    }
+  },
+  "ctx-lh-supramarginal": {
+    "ja": "左縁上回",
+    "ja_short": "縁上回",
+    "en": "Left Supramarginal",
+    "en_short": "Supramarginal",
+    "side": "L",
+    "base": "supramarginal",
+    "atlas": "dkt",
+    "group": "頭頂葉",
+    "color": [
+      80,
+      160,
+      20
+    ],
+    "slice": {
+      "x": -56.96,
+      "y": -34.06,
+      "z": 34.06
+    }
+  },
+  "ctx-rh-supramarginal": {
+    "ja": "右縁上回",
+    "ja_short": "縁上回",
+    "en": "Right Supramarginal",
+    "en_short": "Supramarginal",
+    "side": "R",
+    "base": "supramarginal",
+    "atlas": "dkt",
+    "group": "頭頂葉",
+    "color": [
+      80,
+      160,
+      20
+    ],
+    "slice": {
+      "x": 57.35,
+      "y": -34.06,
+      "z": 34.06
+    }
+  },
+  "ctx-lh-transversetemporal": {
+    "ja": "左横側頭回",
+    "ja_short": "横側頭回",
+    "en": "Left Transverse Temporal",
+    "en_short": "Transverse Temporal",
+    "side": "L",
+    "base": "transversetemporal",
+    "atlas": "dkt",
+    "group": "側頭葉",
+    "color": [
+      150,
+      150,
+      200
+    ],
+    "slice": {
+      "x": -45.16,
+      "y": -20.05,
+      "z": 8.25
+    }
+  },
+  "ctx-rh-transversetemporal": {
+    "ja": "右横側頭回",
+    "ja_short": "横側頭回",
+    "en": "Right Transverse Temporal",
+    "en_short": "Transverse Temporal",
+    "side": "R",
+    "base": "transversetemporal",
+    "atlas": "dkt",
+    "group": "側頭葉",
+    "color": [
+      150,
+      150,
+      200
+    ],
+    "slice": {
+      "x": 45.55,
+      "y": -20.05,
+      "z": 8.25
+    }
+  },
+  "ctx-lh-insula": {
+    "ja": "左島皮質",
+    "ja_short": "島皮質",
+    "en": "Left Insula",
+    "en_short": "Insula",
+    "side": "L",
+    "base": "insula",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      255,
+      192,
+      32
+    ],
+    "slice": {
+      "x": -37.79,
+      "y": 4.29,
+      "z": -0.97
+    }
+  },
+  "ctx-rh-insula": {
+    "ja": "右島皮質",
+    "ja_short": "島皮質",
+    "en": "Right Insula",
+    "en_short": "Insula",
+    "side": "R",
+    "base": "insula",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      255,
+      192,
+      32
+    ],
+    "slice": {
+      "x": 37.44,
+      "y": 4.29,
+      "z": -0.97
+    }
+  },
+  "Left-Cerebral-White-Matter": {
+    "ja": "左大脳白質",
+    "ja_short": "大脳白質",
+    "en": "Left Cerebral White Matter",
+    "en_short": "Cerebral White Matter",
+    "side": "L",
+    "base": "Cerebral-White-Matter",
+    "atlas": "dkt",
+    "group": "白質",
+    "color": [
+      245,
+      245,
+      245
+    ],
+    "slice": {
+      "x": -27.46,
+      "y": -19.68,
+      "z": 18.95
+    }
+  },
+  "Right-Cerebral-White-Matter": {
+    "ja": "右大脳白質",
+    "ja_short": "大脳白質",
+    "en": "Right Cerebral White Matter",
+    "en_short": "Cerebral White Matter",
+    "side": "R",
+    "base": "Cerebral-White-Matter",
+    "atlas": "dkt",
+    "group": "白質",
+    "color": [
+      245,
+      245,
+      245
+    ],
+    "slice": {
+      "x": 27.11,
+      "y": -19.68,
+      "z": 18.95
+    }
+  },
+  "Left-Cerebellum-White-Matter": {
+    "ja": "左小脳白質",
+    "ja_short": "小脳白質",
+    "en": "Left Cerebellum White Matter",
+    "en_short": "Cerebellum White Matter",
+    "side": "L",
+    "base": "Cerebellum-White-Matter",
+    "atlas": "dkt",
+    "group": "小脳",
+    "color": [
+      220,
+      248,
+      164
+    ],
+    "slice": {
+      "x": -17.14,
+      "y": -55.09,
+      "z": -34.89
+    }
+  },
+  "Right-Cerebellum-White-Matter": {
+    "ja": "右小脳白質",
+    "ja_short": "小脳白質",
+    "en": "Right Cerebellum White Matter",
+    "en_short": "Cerebellum White Matter",
+    "side": "R",
+    "base": "Cerebellum-White-Matter",
+    "atlas": "dkt",
+    "group": "小脳",
+    "color": [
+      220,
+      248,
+      164
+    ],
+    "slice": {
+      "x": 16.79,
+      "y": -55.09,
+      "z": -34.89
+    }
+  },
+  "Left-Cerebellum-Cortex": {
+    "ja": "左小脳皮質",
+    "ja_short": "小脳皮質",
+    "en": "Left Cerebellum Cortex",
+    "en_short": "Cerebellum Cortex",
+    "side": "L",
+    "base": "Cerebellum-Cortex",
+    "atlas": "dkt",
+    "group": "小脳",
+    "color": [
+      230,
+      148,
+      34
+    ],
+    "slice": {
+      "x": -24.51,
+      "y": -62.46,
+      "z": -37.11
+    }
+  },
+  "Right-Cerebellum-Cortex": {
+    "ja": "右小脳皮質",
+    "ja_short": "小脳皮質",
+    "en": "Right Cerebellum Cortex",
+    "en_short": "Cerebellum Cortex",
+    "side": "R",
+    "base": "Cerebellum-Cortex",
+    "atlas": "dkt",
+    "group": "小脳",
+    "color": [
+      230,
+      148,
+      34
+    ],
+    "slice": {
+      "x": 23.43,
+      "y": -62.46,
+      "z": -37.11
+    }
+  },
+  "Left-Thalamus": {
+    "ja": "左視床",
+    "ja_short": "視床",
+    "en": "Left Thalamus",
+    "en_short": "Thalamus",
+    "side": "L",
+    "base": "Thalamus",
+    "atlas": "dkt",
+    "group": "視床・間脳",
+    "color": [
+      0,
+      118,
+      14
+    ],
+    "slice": {
+      "x": -11.97,
+      "y": -18.21,
+      "z": 6.04
+    }
+  },
+  "Right-Thalamus": {
+    "ja": "右視床",
+    "ja_short": "視床",
+    "en": "Right Thalamus",
+    "en_short": "Thalamus",
+    "side": "R",
+    "base": "Thalamus",
+    "atlas": "dkt",
+    "group": "視床・間脳",
+    "color": [
+      0,
+      118,
+      14
+    ],
+    "slice": {
+      "x": 10.89,
+      "y": -18.21,
+      "z": 6.04
+    }
+  },
+  "Left-Caudate": {
+    "ja": "左尾状核",
+    "ja_short": "尾状核",
+    "en": "Left Caudate",
+    "en_short": "Caudate",
+    "side": "L",
+    "base": "Caudate",
+    "atlas": "dkt",
+    "group": "大脳基底核",
+    "color": [
+      122,
+      186,
+      220
+    ],
+    "slice": {
+      "x": -13.45,
+      "y": 12.39,
+      "z": 9.73
+    }
+  },
+  "Right-Caudate": {
+    "ja": "右尾状核",
+    "ja_short": "尾状核",
+    "en": "Right Caudate",
+    "en_short": "Caudate",
+    "side": "R",
+    "base": "Caudate",
+    "atlas": "dkt",
+    "group": "大脳基底核",
+    "color": [
+      122,
+      186,
+      220
+    ],
+    "slice": {
+      "x": 13.1,
+      "y": 12.39,
+      "z": 9.73
+    }
+  },
+  "Left-Putamen": {
+    "ja": "左被殻",
+    "ja_short": "被殻",
+    "en": "Left Putamen",
+    "en_short": "Putamen",
+    "side": "L",
+    "base": "Putamen",
+    "atlas": "dkt",
+    "group": "大脳基底核",
+    "color": [
+      236,
+      13,
+      176
+    ],
+    "slice": {
+      "x": -26.72,
+      "y": 2.81,
+      "z": -0.6
+    }
+  },
+  "Right-Putamen": {
+    "ja": "右被殻",
+    "ja_short": "被殻",
+    "en": "Right Putamen",
+    "en_short": "Putamen",
+    "side": "R",
+    "base": "Putamen",
+    "atlas": "dkt",
+    "group": "大脳基底核",
+    "color": [
+      236,
+      13,
+      176
+    ],
+    "slice": {
+      "x": 26.38,
+      "y": 2.81,
+      "z": -0.6
+    }
+  },
+  "Left-Pallidum": {
+    "ja": "左淡蒼球",
+    "ja_short": "淡蒼球",
+    "en": "Left Pallidum",
+    "en_short": "Pallidum",
+    "side": "L",
+    "base": "Pallidum",
+    "atlas": "dkt",
+    "group": "大脳基底核",
+    "color": [
+      12,
+      48,
+      255
+    ],
+    "slice": {
+      "x": -20.82,
+      "y": -3.46,
+      "z": -2.07
+    }
+  },
+  "Right-Pallidum": {
+    "ja": "右淡蒼球",
+    "ja_short": "淡蒼球",
+    "en": "Right Pallidum",
+    "en_short": "Pallidum",
+    "side": "R",
+    "base": "Pallidum",
+    "atlas": "dkt",
+    "group": "大脳基底核",
+    "color": [
+      13,
+      48,
+      255
+    ],
+    "slice": {
+      "x": 20.48,
+      "y": -3.46,
+      "z": -2.07
+    }
+  },
+  "Left-Hippocampus": {
+    "ja": "左海馬",
+    "ja_short": "海馬",
+    "en": "Left Hippocampus",
+    "en_short": "Hippocampus",
+    "side": "L",
+    "base": "Hippocampus",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      220,
+      216,
+      20
+    ],
+    "slice": {
+      "x": -25.99,
+      "y": -20.05,
+      "z": -15.35
+    }
+  },
+  "Right-Hippocampus": {
+    "ja": "右海馬",
+    "ja_short": "海馬",
+    "en": "Right Hippocampus",
+    "en_short": "Hippocampus",
+    "side": "R",
+    "base": "Hippocampus",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      220,
+      216,
+      20
+    ],
+    "slice": {
+      "x": 26.38,
+      "y": -20.05,
+      "z": -15.35
+    }
+  },
+  "Left-Amygdala": {
+    "ja": "左扁桃体",
+    "ja_short": "扁桃体",
+    "en": "Left Amygdala",
+    "en_short": "Amygdala",
+    "side": "L",
+    "base": "Amygdala",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      103,
+      255,
+      255
+    ],
+    "slice": {
+      "x": -23.77,
+      "y": -3.83,
+      "z": -20.14
+    }
+  },
+  "Right-Amygdala": {
+    "ja": "右扁桃体",
+    "ja_short": "扁桃体",
+    "en": "Right Amygdala",
+    "en_short": "Amygdala",
+    "side": "R",
+    "base": "Amygdala",
+    "atlas": "dkt",
+    "group": "大脳辺縁系",
+    "color": [
+      103,
+      255,
+      255
+    ],
+    "slice": {
+      "x": 22.69,
+      "y": -3.83,
+      "z": -20.14
+    }
+  },
+  "Left-Accumbens-area": {
+    "ja": "左側坐核",
+    "ja_short": "側坐核",
+    "en": "Left Accumbens Area",
+    "en_short": "Accumbens Area",
+    "side": "L",
+    "base": "Accumbens-area",
+    "atlas": "dkt",
+    "group": "大脳基底核",
+    "color": [
+      255,
+      165,
+      0
+    ],
+    "slice": {
+      "x": -9.02,
+      "y": 10.55,
+      "z": -8.34
+    }
+  },
+  "Right-Accumbens-area": {
+    "ja": "右側坐核",
+    "ja_short": "側坐核",
+    "en": "Right Accumbens Area",
+    "en_short": "Accumbens Area",
+    "side": "R",
+    "base": "Accumbens-area",
+    "atlas": "dkt",
+    "group": "大脳基底核",
+    "color": [
+      255,
+      165,
+      0
+    ],
+    "slice": {
+      "x": 7.94,
+      "y": 10.55,
+      "z": -8.34
+    }
+  },
+  "Left-VentralDC": {
+    "ja": "左腹側間脳",
+    "ja_short": "腹側間脳",
+    "en": "Left Ventral Diencephalon",
+    "en_short": "Ventral Diencephalon",
+    "side": "L",
+    "base": "VentralDC",
+    "atlas": "dkt",
+    "group": "視床・間脳",
+    "color": [
+      145,
+      42,
+      42
+    ],
+    "slice": {
+      "x": -9.02,
+      "y": -16.0,
+      "z": -10.19
+    }
+  },
+  "Right-VentralDC": {
+    "ja": "右腹側間脳",
+    "ja_short": "腹側間脳",
+    "en": "Right Ventral Diencephalon",
+    "en_short": "Ventral Diencephalon",
+    "side": "R",
+    "base": "VentralDC",
+    "atlas": "dkt",
+    "group": "視床・間脳",
+    "color": [
+      165,
+      42,
+      42
+    ],
+    "slice": {
+      "x": 8.68,
+      "y": -16.0,
+      "z": -10.19
+    }
+  },
+  "Left-Lateral-Ventricle": {
+    "ja": "左側脳室",
+    "ja_short": "側脳室",
+    "en": "Left Lateral Ventricle",
+    "en_short": "Lateral Ventricle",
+    "side": "L",
+    "base": "Lateral-Ventricle",
+    "atlas": "dkt",
+    "group": "脳室系",
+    "color": [
+      120,
+      18,
+      134
+    ],
+    "slice": {
+      "x": -12.71,
+      "y": -14.52,
+      "z": 14.89
+    }
+  },
+  "Right-Lateral-Ventricle": {
+    "ja": "右側脳室",
+    "ja_short": "側脳室",
+    "en": "Right Lateral Ventricle",
+    "en_short": "Lateral Ventricle",
+    "side": "R",
+    "base": "Lateral-Ventricle",
+    "atlas": "dkt",
+    "group": "脳室系",
+    "color": [
+      120,
+      18,
+      134
+    ],
+    "slice": {
+      "x": 12.36,
+      "y": -14.52,
+      "z": 14.89
+    }
+  },
+  "Left-Inf-Lat-Vent": {
+    "ja": "左側脳室下角",
+    "ja_short": "側脳室下角",
+    "en": "Left Inferior Lateral Ventricle",
+    "en_short": "Inferior Lateral Ventricle",
+    "side": "L",
+    "base": "Inf-Lat-Vent",
+    "atlas": "dkt",
+    "group": "脳室系",
+    "color": [
+      196,
+      58,
+      250
+    ],
+    "slice": {
+      "x": -34.84,
+      "y": -11.95,
+      "z": -17.2
+    }
+  },
+  "Right-Inf-Lat-Vent": {
+    "ja": "右側脳室下角",
+    "ja_short": "側脳室下角",
+    "en": "Right Inferior Lateral Ventricle",
+    "en_short": "Inferior Lateral Ventricle",
+    "side": "R",
+    "base": "Inf-Lat-Vent",
+    "atlas": "dkt",
+    "group": "脳室系",
+    "color": [
+      196,
+      58,
+      250
+    ],
+    "slice": {
+      "x": 31.54,
+      "y": -11.95,
+      "z": -17.2
+    }
+  },
+  "Left-choroid-plexus": {
+    "ja": "左脈絡叢",
+    "ja_short": "脈絡叢",
+    "en": "Left Choroid Plexus",
+    "en_short": "Choroid Plexus",
+    "side": "L",
+    "base": "choroid-plexus",
+    "atlas": "dkt",
+    "group": "脳室系",
+    "color": [
+      0,
+      200,
+      200
+    ],
+    "slice": {
+      "x": -23.04,
+      "y": -34.8,
+      "z": 11.2
+    }
+  },
+  "Right-choroid-plexus": {
+    "ja": "右脈絡叢",
+    "ja_short": "脈絡叢",
+    "en": "Right Choroid Plexus",
+    "en_short": "Choroid Plexus",
+    "side": "R",
+    "base": "choroid-plexus",
+    "atlas": "dkt",
+    "group": "脳室系",
+    "color": [
+      0,
+      200,
+      221
+    ],
+    "slice": {
+      "x": 21.95,
+      "y": -34.8,
+      "z": 11.2
+    }
+  },
+  "Brain-Stem": {
+    "ja": "脳幹",
+    "ja_short": "脳幹",
+    "en": "Brain Stem",
+    "en_short": "Brain Stem",
+    "base": "Brain-Stem",
+    "atlas": "dkt",
+    "group": "脳幹",
+    "color": [
+      119,
+      159,
+      176
+    ],
+    "slice": {
+      "x": -0.17,
+      "y": -30.38,
+      "z": -33.05
+    }
+  },
+  "3rd-Ventricle": {
+    "ja": "第三脳室",
+    "ja_short": "第三脳室",
+    "en": "Third Ventricle",
+    "en_short": "Third Ventricle",
+    "base": "3rd-Ventricle",
+    "atlas": "dkt",
+    "group": "脳室系",
+    "color": [
+      204,
+      182,
+      142
+    ],
+    "slice": {
+      "x": -0.17,
+      "y": -9.73,
+      "z": -3.55
+    }
+  },
+  "4th-Ventricle": {
+    "ja": "第四脳室",
+    "ja_short": "第四脳室",
+    "en": "Fourth Ventricle",
+    "en_short": "Fourth Ventricle",
+    "base": "4th-Ventricle",
+    "atlas": "dkt",
+    "group": "脳室系",
+    "color": [
+      42,
+      204,
+      164
+    ],
+    "slice": {
+      "x": -0.17,
+      "y": -45.13,
+      "z": -33.79
+    }
+  },
+  "CSF": {
+    "ja": "脳脊髄液",
+    "ja_short": "脳脊髄液",
+    "en": "Cerebrospinal Fluid",
+    "en_short": "Cerebrospinal Fluid",
+    "base": "CSF",
+    "atlas": "dkt",
+    "group": "脳室系",
+    "color": [
+      60,
+      60,
+      60
+    ],
+    "slice": {
+      "x": -0.17,
+      "y": -22.27,
+      "z": 9.73
+    }
+  },
+  "WM-hypointensities": {
+    "ja": "白質低信号域",
+    "ja_short": "白質低信号域",
+    "en": "White Matter Hypointensities",
+    "en_short": "White Matter Hypointensities",
+    "base": "WM-hypointensities",
+    "atlas": "dkt",
+    "group": "白質",
+    "color": [
+      200,
+      70,
+      255
+    ],
+    "slice": {
+      "x": -13.45,
+      "y": 5.02,
+      "z": 20.05
+    }
+  },
+  "Left-ACA": {
+    "ja": "左前大脳動脈",
+    "ja_short": "前大脳動脈",
+    "en": "Left Anterior Cerebral Artery",
+    "en_short": "Anterior Cerebral Artery",
+    "side": "L",
+    "base": "ACA",
+    "group": "前大脳動脈",
+    "color": [
+      3,
+      123,
+      163
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -9.76,
+      "y": 8.34,
+      "z": 40.33
+    }
+  },
+  "Right-ACA": {
+    "ja": "右前大脳動脈",
+    "ja_short": "前大脳動脈",
+    "en": "Right Anterior Cerebral Artery",
+    "en_short": "Anterior Cerebral Artery",
+    "side": "R",
+    "base": "ACA",
+    "group": "前大脳動脈",
+    "color": [
+      3,
+      123,
+      163
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 13.1,
+      "y": 8.34,
+      "z": 40.33
+    }
+  },
+  "Left-MLS": {
+    "ja": "左内側レンズ核線条体動脈",
+    "ja_short": "内側レンズ核線条体動脈",
+    "en": "Left Medial Lenticulostriate",
+    "en_short": "Medial Lenticulostriate",
+    "side": "L",
+    "base": "MLS",
+    "group": "前大脳動脈",
+    "color": [
+      136,
+      164,
+      255
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -6.81,
+      "y": 12.77,
+      "z": 21.16
+    }
+  },
+  "Right-MLS": {
+    "ja": "右内側レンズ核線条体動脈",
+    "ja_short": "内側レンズ核線条体動脈",
+    "en": "Right Medial Lenticulostriate",
+    "en_short": "Medial Lenticulostriate",
+    "side": "R",
+    "base": "MLS",
+    "group": "前大脳動脈",
+    "color": [
+      136,
+      164,
+      255
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 10.15,
+      "y": 12.77,
+      "z": 21.16
+    }
+  },
+  "Left-LLS": {
+    "ja": "左外側レンズ核線条体動脈",
+    "ja_short": "外側レンズ核線条体動脈",
+    "en": "Left Lateral Lenticulostriate",
+    "en_short": "Lateral Lenticulostriate",
+    "side": "L",
+    "base": "LLS",
+    "group": "中大脳動脈",
+    "color": [
+      157,
+      0,
+      65
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -20.82,
+      "y": -1.25,
+      "z": 5.3
+    }
+  },
+  "Right-LLS": {
+    "ja": "右外側レンズ核線条体動脈",
+    "ja_short": "外側レンズ核線条体動脈",
+    "en": "Right Lateral Lenticulostriate",
+    "en_short": "Lateral Lenticulostriate",
+    "side": "R",
+    "base": "LLS",
+    "group": "中大脳動脈",
+    "color": [
+      157,
+      0,
+      65
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 23.43,
+      "y": -1.25,
+      "z": 5.3
+    }
+  },
+  "Left-MCAF": {
+    "ja": "左中大脳動脈 前頭枝",
+    "ja_short": "中大脳動脈 前頭枝",
+    "en": "Left MCA Frontal",
+    "en_short": "MCA Frontal",
+    "side": "L",
+    "base": "MCAF",
+    "group": "中大脳動脈",
+    "color": [
+      160,
+      77,
+      74
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -36.31,
+      "y": 20.51,
+      "z": 19.68
+    }
+  },
+  "Right-MCAF": {
+    "ja": "右中大脳動脈 前頭枝",
+    "ja_short": "中大脳動脈 前頭枝",
+    "en": "Right MCA Frontal",
+    "en_short": "MCA Frontal",
+    "side": "R",
+    "base": "MCAF",
+    "group": "中大脳動脈",
+    "color": [
+      160,
+      77,
+      74
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 38.91,
+      "y": 20.51,
+      "z": 19.68
+    }
+  },
+  "Left-MCAP": {
+    "ja": "左中大脳動脈 頭頂枝",
+    "ja_short": "中大脳動脈 頭頂枝",
+    "en": "Left MCA Parietal",
+    "en_short": "MCA Parietal",
+    "side": "L",
+    "base": "MCAP",
+    "group": "中大脳動脈",
+    "color": [
+      216,
+      75,
+      2
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -43.69,
+      "y": -38.12,
+      "z": 38.86
+    }
+  },
+  "Right-MCAP": {
+    "ja": "右中大脳動脈 頭頂枝",
+    "ja_short": "中大脳動脈 頭頂枝",
+    "en": "Right MCA Parietal",
+    "en_short": "MCA Parietal",
+    "side": "R",
+    "base": "MCAP",
+    "group": "中大脳動脈",
+    "color": [
+      216,
+      75,
+      2
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 45.55,
+      "y": -38.12,
+      "z": 38.86
+    }
+  },
+  "Left-MCAT": {
+    "ja": "左中大脳動脈 側頭枝",
+    "ja_short": "中大脳動脈 側頭枝",
+    "en": "Left MCA Temporal",
+    "en_short": "MCA Temporal",
+    "side": "L",
+    "base": "MCAT",
+    "group": "中大脳動脈",
+    "color": [
+      206,
+      132,
+      77
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -49.59,
+      "y": -16.37,
+      "z": -13.5
+    }
+  },
+  "Right-MCAT": {
+    "ja": "右中大脳動脈 側頭枝",
+    "ja_short": "中大脳動脈 側頭枝",
+    "en": "Right MCA Temporal",
+    "en_short": "MCA Temporal",
+    "side": "R",
+    "base": "MCAT",
+    "group": "中大脳動脈",
+    "color": [
+      206,
+      132,
+      77
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 49.98,
+      "y": -16.37,
+      "z": -13.5
+    }
+  },
+  "Left-MCAO": {
+    "ja": "左中大脳動脈 後頭枝",
+    "ja_short": "中大脳動脈 後頭枝",
+    "en": "Left MCA Occipital",
+    "en_short": "MCA Occipital",
+    "side": "L",
+    "base": "MCAO",
+    "group": "中大脳動脈",
+    "color": [
+      238,
+      156,
+      1
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -38.52,
+      "y": -76.11,
+      "z": 15.63
+    }
+  },
+  "Right-MCAO": {
+    "ja": "右中大脳動脈 後頭枝",
+    "ja_short": "中大脳動脈 後頭枝",
+    "en": "Right MCA Occipital",
+    "en_short": "MCA Occipital",
+    "side": "R",
+    "base": "MCAO",
+    "group": "中大脳動脈",
+    "color": [
+      238,
+      156,
+      1
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 39.65,
+      "y": -76.11,
+      "z": 15.63
+    }
+  },
+  "Left-MCAI": {
+    "ja": "左中大脳動脈 島枝",
+    "ja_short": "中大脳動脈 島枝",
+    "en": "Left MCA Insular",
+    "en_short": "MCA Insular",
+    "side": "L",
+    "base": "MCAI",
+    "group": "中大脳動脈",
+    "color": [
+      239,
+      195,
+      77
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -34.84,
+      "y": 3.18,
+      "z": -1.34
+    }
+  },
+  "Right-MCAI": {
+    "ja": "右中大脳動脈 島枝",
+    "ja_short": "中大脳動脈 島枝",
+    "en": "Right MCA Insular",
+    "en_short": "MCA Insular",
+    "side": "R",
+    "base": "MCAI",
+    "group": "中大脳動脈",
+    "color": [
+      239,
+      195,
+      77
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 38.18,
+      "y": 3.18,
+      "z": -1.34
+    }
+  },
+  "Left-PCAT": {
+    "ja": "左後大脳動脈 側頭枝",
+    "ja_short": "後大脳動脈 側頭枝",
+    "en": "Left PCA Temporal",
+    "en_short": "PCA Temporal",
+    "side": "L",
+    "base": "PCAT",
+    "group": "後大脳動脈",
+    "color": [
+      76,
+      110,
+      3
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -39.26,
+      "y": -41.44,
+      "z": -19.77
+    }
+  },
+  "Right-PCAT": {
+    "ja": "右後大脳動脈 側頭枝",
+    "ja_short": "後大脳動脈 側頭枝",
+    "en": "Right PCA Temporal",
+    "en_short": "PCA Temporal",
+    "side": "R",
+    "base": "PCAT",
+    "group": "後大脳動脈",
+    "color": [
+      76,
+      110,
+      3
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 41.86,
+      "y": -41.44,
+      "z": -19.77
+    }
+  },
+  "Left-PCAO": {
+    "ja": "左後大脳動脈 後頭枝",
+    "ja_short": "後大脳動脈 後頭枝",
+    "en": "Left PCA Occipital",
+    "en_short": "PCA Occipital",
+    "side": "L",
+    "base": "PCAO",
+    "group": "後大脳動脈",
+    "color": [
+      73,
+      144,
+      89
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -15.66,
+      "y": -77.21,
+      "z": 5.67
+    }
+  },
+  "Right-PCAO": {
+    "ja": "右後大脳動脈 後頭枝",
+    "ja_short": "後大脳動脈 後頭枝",
+    "en": "Right PCA Occipital",
+    "en_short": "PCA Occipital",
+    "side": "R",
+    "base": "PCAO",
+    "group": "後大脳動脈",
+    "color": [
+      73,
+      144,
+      89
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 18.26,
+      "y": -77.21,
+      "z": 5.67
+    }
+  },
+  "Left-PCTP": {
+    "ja": "左後脈絡叢・視床穿通枝",
+    "ja_short": "後脈絡叢・視床穿通枝",
+    "en": "Left Posterior Choroidal / Thalamoperf.",
+    "en_short": "Posterior Choroidal / Thalamoperf.",
+    "side": "L",
+    "base": "PCTP",
+    "group": "後大脳動脈",
+    "color": [
+      10,
+      181,
+      143
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -9.02,
+      "y": -22.27,
+      "z": 0.14
+    }
+  },
+  "Right-PCTP": {
+    "ja": "右後脈絡叢・視床穿通枝",
+    "ja_short": "後脈絡叢・視床穿通枝",
+    "en": "Right Posterior Choroidal / Thalamoperf.",
+    "en_short": "Posterior Choroidal / Thalamoperf.",
+    "side": "R",
+    "base": "PCTP",
+    "group": "後大脳動脈",
+    "color": [
+      10,
+      181,
+      143
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 12.36,
+      "y": -22.27,
+      "z": 0.14
+    }
+  },
+  "Left-ACTP": {
+    "ja": "左前脈絡叢・視床穿通枝",
+    "ja_short": "前脈絡叢・視床穿通枝",
+    "en": "Left Anterior Choroidal / Thalamoperf.",
+    "en_short": "Anterior Choroidal / Thalamoperf.",
+    "side": "L",
+    "base": "ACTP",
+    "group": "後大脳動脈",
+    "color": [
+      14,
+      211,
+      207
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -26.72,
+      "y": -25.95,
+      "z": -14.61
+    }
+  },
+  "Right-ACTP": {
+    "ja": "右前脈絡叢・視床穿通枝",
+    "ja_short": "前脈絡叢・視床穿通枝",
+    "en": "Right Anterior Choroidal / Thalamoperf.",
+    "en_short": "Anterior Choroidal / Thalamoperf.",
+    "side": "R",
+    "base": "ACTP",
+    "group": "後大脳動脈",
+    "color": [
+      14,
+      211,
+      207
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 30.06,
+      "y": -25.95,
+      "z": -14.61
+    }
+  },
+  "Left-BA": {
+    "ja": "左脳底動脈",
+    "ja_short": "脳底動脈",
+    "en": "Left Basilar",
+    "en_short": "Basilar",
+    "side": "L",
+    "base": "BA",
+    "group": "椎骨脳底動脈",
+    "color": [
+      125,
+      64,
+      200
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -5.34,
+      "y": -32.59,
+      "z": -35.63
+    }
+  },
+  "Right-BA": {
+    "ja": "右脳底動脈",
+    "ja_short": "脳底動脈",
+    "en": "Right Basilar",
+    "en_short": "Basilar",
+    "side": "R",
+    "base": "BA",
+    "group": "椎骨脳底動脈",
+    "color": [
+      125,
+      64,
+      200
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 8.68,
+      "y": -32.59,
+      "z": -35.63
+    }
+  },
+  "Left-SCA": {
+    "ja": "左上小脳動脈",
+    "ja_short": "上小脳動脈",
+    "en": "Left Superior Cerebellar",
+    "en_short": "Superior Cerebellar",
+    "side": "L",
+    "base": "SCA",
+    "group": "椎骨脳底動脈",
+    "color": [
+      173,
+      116,
+      178
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -17.87,
+      "y": -56.19,
+      "z": -23.46
+    }
+  },
+  "Right-SCA": {
+    "ja": "右上小脳動脈",
+    "ja_short": "上小脳動脈",
+    "en": "Right Superior Cerebellar",
+    "en_short": "Superior Cerebellar",
+    "side": "R",
+    "base": "SCA",
+    "group": "椎骨脳底動脈",
+    "color": [
+      173,
+      116,
+      178
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 21.21,
+      "y": -56.19,
+      "z": -23.46
+    }
+  },
+  "Left-PICA": {
+    "ja": "左下小脳動脈",
+    "ja_short": "下小脳動脈",
+    "en": "Left Inferior Cerebellar",
+    "en_short": "Inferior Cerebellar",
+    "side": "L",
+    "base": "PICA",
+    "group": "椎骨脳底動脈",
+    "color": [
+      254,
+      126,
+      196
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -24.51,
+      "y": -64.3,
+      "z": -43.37
+    }
+  },
+  "Right-PICA": {
+    "ja": "右下小脳動脈",
+    "ja_short": "下小脳動脈",
+    "en": "Right Inferior Cerebellar",
+    "en_short": "Inferior Cerebellar",
+    "side": "R",
+    "base": "PICA",
+    "group": "椎骨脳底動脈",
+    "color": [
+      254,
+      126,
+      196
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 24.9,
+      "y": -64.3,
+      "z": -43.37
+    }
+  },
+  "Left-LV": {
+    "ja": "左側脳室",
+    "ja_short": "側脳室",
+    "en": "Left Lateral Ventricle",
+    "en_short": "Lateral Ventricle",
+    "side": "L",
+    "base": "LV",
+    "group": "脳室",
+    "color": [
+      141,
+      147,
+      153
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": -9.76,
+      "y": -8.62,
+      "z": 13.41
+    }
+  },
+  "Right-LV": {
+    "ja": "右側脳室",
+    "ja_short": "側脳室",
+    "en": "Right Lateral Ventricle",
+    "en_short": "Lateral Ventricle",
+    "side": "R",
+    "base": "LV",
+    "group": "脳室",
+    "color": [
+      141,
+      147,
+      153
+    ],
+    "atlas": "arterial",
+    "slice": {
+      "x": 13.1,
+      "y": -8.62,
+      "z": 13.41
+    }
+  }
+}
