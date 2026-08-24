@@ -2584,9 +2584,9 @@
     "base": "parietal",
     "group": "大脳",
     "color": [
-      45,
-      146,
-      186
+      46,
+      157,
+      102
     ],
     "atlas": "macro",
     "side": "L",
@@ -2604,9 +2604,9 @@
     "base": "parietal",
     "group": "大脳",
     "color": [
-      45,
-      146,
-      186
+      46,
+      157,
+      102
     ],
     "atlas": "macro",
     "side": "R",
@@ -2624,9 +2624,9 @@
     "base": "temporal",
     "group": "大脳",
     "color": [
-      37,
-      129,
-      127
+      184,
+      40,
+      157
     ],
     "atlas": "macro",
     "side": "L",
@@ -2644,9 +2644,9 @@
     "base": "temporal",
     "group": "大脳",
     "color": [
-      37,
-      129,
-      127
+      184,
+      40,
+      157
     ],
     "atlas": "macro",
     "side": "R",
@@ -2664,9 +2664,9 @@
     "base": "occipital",
     "group": "大脳",
     "color": [
-      46,
-      157,
-      102
+      172,
+      86,
+      32
     ],
     "atlas": "macro",
     "side": "L",
@@ -2684,9 +2684,9 @@
     "base": "occipital",
     "group": "大脳",
     "color": [
-      46,
-      157,
-      102
+      172,
+      86,
+      32
     ],
     "atlas": "macro",
     "side": "R",
@@ -2704,9 +2704,9 @@
     "base": "insula",
     "group": "大脳",
     "color": [
-      104,
-      123,
-      33
+      165,
+      128,
+      40
     ],
     "atlas": "macro",
     "side": "L",
@@ -2724,9 +2724,9 @@
     "base": "insula",
     "group": "大脳",
     "color": [
-      104,
-      123,
-      33
+      165,
+      128,
+      40
     ],
     "atlas": "macro",
     "side": "R",
@@ -2744,9 +2744,9 @@
     "base": "limbic",
     "group": "大脳",
     "color": [
-      165,
-      128,
-      40
+      159,
+      91,
+      241
     ],
     "atlas": "macro",
     "side": "L",
@@ -2765,9 +2765,9 @@
     "base": "limbic",
     "group": "大脳",
     "color": [
-      165,
-      128,
-      40
+      159,
+      91,
+      241
     ],
     "atlas": "macro",
     "side": "R",
@@ -2786,9 +2786,9 @@
     "base": "limbic_deep",
     "group": "大脳",
     "color": [
-      165,
-      128,
-      40
+      159,
+      91,
+      241
     ],
     "atlas": "macro",
     "side": "L",
@@ -2807,9 +2807,9 @@
     "base": "limbic_deep",
     "group": "大脳",
     "color": [
-      165,
-      128,
-      40
+      159,
+      91,
+      241
     ],
     "atlas": "macro",
     "side": "R",
@@ -2828,9 +2828,9 @@
     "base": "basal",
     "group": "深部",
     "color": [
-      172,
-      86,
-      32
+      37,
+      129,
+      127
     ],
     "atlas": "macro",
     "side": "L",
@@ -2848,9 +2848,9 @@
     "base": "basal",
     "group": "深部",
     "color": [
-      172,
-      86,
-      32
+      37,
+      129,
+      127
     ],
     "atlas": "macro",
     "side": "R",
@@ -2908,9 +2908,9 @@
     "base": "brainstem",
     "group": "脳幹・小脳",
     "color": [
-      184,
-      40,
-      157
+      45,
+      146,
+      186
     ],
     "atlas": "macro",
     "slice": {
@@ -2927,9 +2927,9 @@
     "base": "cerebellum",
     "group": "脳幹・小脳",
     "color": [
-      159,
-      91,
-      241
+      104,
+      123,
+      33
     ],
     "atlas": "macro",
     "side": "L",
@@ -2947,9 +2947,9 @@
     "base": "cerebellum",
     "group": "脳幹・小脳",
     "color": [
-      159,
-      91,
-      241
+      104,
+      123,
+      33
     ],
     "atlas": "macro",
     "side": "R",

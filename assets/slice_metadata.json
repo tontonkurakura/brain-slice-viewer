@@ -310,7 +310,7 @@
         "labels": {
           "dkt": "sagittal/label_atlas.webp?v=3d7c44f9",
           "arterial": "sagittal/label_atlas_arterial.webp?v=fbad119c",
-          "macro": "sagittal/label_atlas_macro.webp?v=d8b691b5"
+          "macro": "sagittal/label_atlas_macro.webp?v=e0cefe52"
         },
         "cols": 16,
         "rows": 16,
@@ -599,7 +599,7 @@
         "labels": {
           "dkt": "coronal/label_atlas.webp?v=c733ac47",
           "arterial": "coronal/label_atlas_arterial.webp?v=1c03a2d1",
-          "macro": "coronal/label_atlas_macro.webp?v=b034fbdd"
+          "macro": "coronal/label_atlas_macro.webp?v=9b815ddd"
         },
         "cols": 16,
         "rows": 16,
@@ -888,7 +888,7 @@
         "labels": {
           "dkt": "axial/label_atlas.webp?v=05d8420f",
           "arterial": "axial/label_atlas_arterial.webp?v=5960657f",
-          "macro": "axial/label_atlas_macro.webp?v=3677665e"
+          "macro": "axial/label_atlas_macro.webp?v=e223a443"
         },
         "cols": 16,
         "rows": 16,
