@@ -223,8 +223,9 @@
 
   <div class="lbl" style="margin-top:11px">アトラス</div>
   <div class="seg" id="atlas">
-    <button data-a="dkt" class="on">解剖学領域</button>
-    <button data-a="arterial">血管支配領域</button>
+    <button data-a="macro" class="on">マクロ</button>
+    <button data-a="dkt">ミクロ</button>
+    <button data-a="arterial">血管支配</button>
   </div>
   <div id="atlasMsg"></div>
 
@@ -312,7 +313,8 @@
       <tr><th>MRI（標準脳）</th>
           <td>MNI152（Connectome Workbench 由来の平均脳）<br>各配布元の条件に従います</td></tr>
       <tr><th>解剖学領域</th>
-          <td>DKT 分割（FreeSurfer / FastSurfer）<br>各配布元の条件に従います</td></tr>
+          <td>DKT 分割（FreeSurfer / FastSurfer）。マクロはこれを脳葉などへまとめたもの<br>
+              各配布元の条件に従います</td></tr>
       <tr><th>血管支配領域</th>
           <td><a href="https://github.com/Chin-Fu-Liu/Arterial_Atlas" target="_blank"
                  rel="noopener noreferrer">JHU Arterial Atlas</a>（Level 1・32 領域）<br>
@@ -719,7 +721,7 @@ const TOUCH  = matchMedia('(hover: none)');
 const NARROW = matchMedia('(max-width: 640px)');
 
 const state = { plane: (Q.get('plane')||'axial'), mode: (Q.get('mode')||'slice'),
-                atlas: (Q.get('atlas')||'dkt'), side:'L',
+                atlas: (Q.get('atlas')||'macro'), side:'L',
                 half:'both', cortex:true,          // 立体モードの見せ方
                 overlay:true, cut:true,            // 重ね方（操作子の状態）
                 world:{x:0,y:0,z:0}, clip:true };  // clip は cut の実効値
@@ -727,8 +729,14 @@ const state = { plane: (Q.get('plane')||'axial'), mode: (Q.get('mode')||'slice')
 /* アトラスの定義。大分類の並び順はここで決める（labels.json の並びは
    生成側の宣言順で、読みたい順とは違う）。model は viewer.html からの相対。 */
 const ATLASES = {
-  dkt: { name:'解剖学領域', model:'brain.glb',
-         groups:['前頭葉','頭頂葉','側頭葉','後頭葉','大脳辺縁系','大脳基底核',
+  /* マクロは DKT を大分類へまとめたもの。生成側で別のラベルボリュームにしてあるので、
+     閲覧側から見れば血管支配と同じ「もう 1 つのアトラス」でしかない。 */
+  macro: { name:'解剖学領域（マクロ）', model:'brain_macro.glb',
+           groups:['大脳','深部','脳幹・小脳'] },
+  /* 大分類の定義そのものは生成側（brainslice/macro.py）が持つ。ここにあるのは
+     一覧に出す順だけ。大分類を足したら**両方**に足す（片方だと黙って消える）。 */
+  dkt: { name:'解剖学領域（ミクロ）', model:'brain.glb',
+         groups:['前頭葉','頭頂葉','側頭葉','後頭葉','島','大脳辺縁系','大脳基底核',
                  '視床・間脳','脳幹','小脳'] },
   arterial: { name:'血管支配領域', model:'brain_arterial.glb',
               groups:['前大脳動脈','中大脳動脈','後大脳動脈','椎骨脳底動脈','脳室'] },
@@ -941,7 +949,11 @@ cClipBtn.onclick = ()=>{ state.cut = !state.cut; applyMode(); };
 
 /* 皮質とみなすもの。大脳白質も一緒に隠す。皮質だけ消すと白い殻が残り、
    結局その中の皮質下構造が見えない。 */
-const CORTICAL = /^ctx-|Cerebral-White-Matter$/;
+const CORTICAL = {
+  dkt: /^ctx-|Cerebral-White-Matter$/,
+  // マクロでは大分類がそのまま皮質。limbic_deep（海馬・扁桃体）は残す
+  macro: /^Macro-\w+-(frontal|parietal|temporal|occipital|insula|limbic|wm)$/,
+};
 
 /* 立体モードの見せ方（半割・皮質の有無）をメッシュに反映する。
 
@@ -958,7 +970,8 @@ function applyVisibility(){
     let vis = true;
     if (solid) {
       if (state.half !== 'both' && v && v.side && v.side !== state.half) vis = false;
-      if (!state.cortex && CORTICAL.test(name)) vis = false;
+      const ctx = CORTICAL[state.atlas];
+      if (!state.cortex && ctx && ctx.test(name)) vis = false;
     }
     o.visible = vis;
   }
@@ -1005,7 +1018,7 @@ function applyMode(){
   document.getElementById('solidCtl').style.display = solid ? '' : 'none';
   /* 血管支配アトラスに「皮質」という区分は無いので、その切り替えは出さない */
   document.getElementById('cCortexRow').style.display =
-    (solid && state.atlas === 'dkt') ? '' : 'none';
+    (solid && !!CORTICAL[state.atlas]) ? '' : 'none';
   sliceMesh.visible = !solid && uiReady && !!lblData;
 
   // クリップは断面モードの操作子にだけ従う。既に読んだモデルにも掛け直す
@@ -1279,6 +1292,7 @@ let hoverSet = new Set();          // 光らせている群（脳底動脈は 2 
 const NO_PANEL = new Set([
   'Left-Cerebral-White-Matter', 'Right-Cerebral-White-Matter',
   'WM-hypointensities', 'CSF',
+  'Macro-Left-wm', 'Macro-Right-wm', 'Macro-Mid-wm',
 ]);
 
 /* ───────── 領域ごとのアンカー（引き出し線の根元） ─────────

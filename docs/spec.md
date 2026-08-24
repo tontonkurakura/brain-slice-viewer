@@ -20,10 +20,12 @@ python3 -m http.server 8791
 | ファイル | 中身 |
 |---|---|
 | `viewer.html` | 本体。HTML・CSS・JS が 1 ファイルに収まっている |
-| `brain.glb` | DKT アトラスのモデル。93 領域。頂点は world RAS (mm) |
+| `brain.glb` | ミクロ（DKT）のモデル。93 領域。頂点は world RAS (mm) |
+| `brain_macro.glb` | マクロ（大分類）のモデル。27 区分 |
 | `brain_arterial.glb` | 血管支配アトラスのモデル。32 領域。切り替えたときに読む |
 | `assets/<面>/t1_atlas.webp` | MRI 断面 256 枚を 1 枚に敷き詰めたもの。アトラス間で共有 |
-| `assets/<面>/label_atlas.webp` | 領域色の断面（DKT） |
+| `assets/<面>/label_atlas.webp` | 領域色の断面（ミクロ） |
+| `assets/<面>/label_atlas_macro.webp` | 領域色の断面（マクロ） |
 | `assets/<面>/label_atlas_arterial.webp` | 領域色の断面（血管支配） |
 | `assets/slice_metadata.json` | 各面のスライス座標、タイルの並び、軸の向き。`atlas.labels` にアトラスごとのラベル画像 |
 | `labels.json` | 領域名の日英、大分類、色、代表スライス（`slice`。world RAS mm）、`atlas`、`side`（`"L"`/`"R"`、正中は持たない）、`ja_short`/`en_short`（左右を外した名前）、`merge`（左右で 1 つとして扱う印） |
@@ -275,7 +277,16 @@ radiological（画像の左が患者の右）にするとモデルと断面で�
 
 ## 3c. アトラスを差し替える／増やす場合
 
-同梱しているのは DKT（Desikan-Killiany-Tourville、31/半球）と血管支配の 2 つ。
+同梱しているのは 3 つ。マクロ（DKT を脳葉などの大分類へまとめたもの。既定）、
+ミクロ（DKT。Desikan-Killiany-Tourville、31/半球）、血管支配。
+
+マクロは合成ではない。DKT のラベルを大分類の ID へ振り直したボリュームを作り、そこから
+GLB と断面画像を生成してある（`brainslice.macro` → `build_meshes --cortex-macro` →
+`export_slices --seg2 macro=…`）。閲覧側の扱いは他のアトラスと同じ。大分類の定義は
+`brainslice/macro.py` が唯一の出所で、ミクロの一覧の見出しも同じ表を読む。
+
+皮質は pial 表面の annot を**大分類へ畳んでから**境界で分割する。順番が逆だと、脳葉の
+内側に頂点の重複が残り、そこが陰影の切れ目になる。
 
 差し替えはこの設計では入力の差し替えでしかない。`export_slices.py` も `build_meshes.py` も
 (ラベルボリューム, LUT) を受け取るだけで、どのアトラスかを知らない。座標の取り決めも

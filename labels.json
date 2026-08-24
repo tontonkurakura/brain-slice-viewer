@@ -1207,7 +1207,7 @@
     "side": "L",
     "base": "insula",
     "atlas": "dkt",
-    "group": "大脳辺縁系",
+    "group": "島",
     "color": [
       255,
       192,
@@ -1227,7 +1227,7 @@
     "side": "R",
     "base": "insula",
     "atlas": "dkt",
-    "group": "大脳辺縁系",
+    "group": "島",
     "color": [
       255,
       192,
@@ -2534,6 +2534,547 @@
       "x": 13.1,
       "y": -8.62,
       "z": 13.41
+    }
+  },
+  "Macro-Left-frontal": {
+    "ja": "左前頭葉",
+    "ja_short": "前頭葉",
+    "en": "Left Frontal Lobe",
+    "en_short": "Frontal Lobe",
+    "base": "frontal",
+    "group": "大脳",
+    "color": [
+      48,
+      98,
+      238
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "slice": {
+      "x": -26.72,
+      "y": 26.04,
+      "z": 25.58
+    }
+  },
+  "Macro-Right-frontal": {
+    "ja": "右前頭葉",
+    "ja_short": "前頭葉",
+    "en": "Right Frontal Lobe",
+    "en_short": "Frontal Lobe",
+    "base": "frontal",
+    "group": "大脳",
+    "color": [
+      48,
+      98,
+      238
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "slice": {
+      "x": 26.38,
+      "y": 26.04,
+      "z": 25.58
+    }
+  },
+  "Macro-Left-parietal": {
+    "ja": "左頭頂葉",
+    "ja_short": "頭頂葉",
+    "en": "Left Parietal Lobe",
+    "en_short": "Parietal Lobe",
+    "base": "parietal",
+    "group": "大脳",
+    "color": [
+      45,
+      146,
+      186
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "slice": {
+      "x": -37.79,
+      "y": -52.88,
+      "z": 40.33
+    }
+  },
+  "Macro-Right-parietal": {
+    "ja": "右頭頂葉",
+    "ja_short": "頭頂葉",
+    "en": "Right Parietal Lobe",
+    "en_short": "Parietal Lobe",
+    "base": "parietal",
+    "group": "大脳",
+    "color": [
+      45,
+      146,
+      186
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "slice": {
+      "x": 38.91,
+      "y": -52.88,
+      "z": 40.33
+    }
+  },
+  "Macro-Left-temporal": {
+    "ja": "左側頭葉",
+    "ja_short": "側頭葉",
+    "en": "Left Temporal Lobe",
+    "en_short": "Temporal Lobe",
+    "base": "temporal",
+    "group": "大脳",
+    "color": [
+      37,
+      129,
+      127
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "slice": {
+      "x": -51.06,
+      "y": -23.74,
+      "z": -16.09
+    }
+  },
+  "Macro-Right-temporal": {
+    "ja": "右側頭葉",
+    "ja_short": "側頭葉",
+    "en": "Right Temporal Lobe",
+    "en_short": "Temporal Lobe",
+    "base": "temporal",
+    "group": "大脳",
+    "color": [
+      37,
+      129,
+      127
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "slice": {
+      "x": 50.71,
+      "y": -23.74,
+      "z": -16.09
+    }
+  },
+  "Macro-Left-occipital": {
+    "ja": "左後頭葉",
+    "ja_short": "後頭葉",
+    "en": "Left Occipital Lobe",
+    "en_short": "Occipital Lobe",
+    "base": "occipital",
+    "group": "大脳",
+    "color": [
+      46,
+      157,
+      102
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "slice": {
+      "x": -17.87,
+      "y": -80.53,
+      "z": 2.35
+    }
+  },
+  "Macro-Right-occipital": {
+    "ja": "右後頭葉",
+    "ja_short": "後頭葉",
+    "en": "Right Occipital Lobe",
+    "en_short": "Occipital Lobe",
+    "base": "occipital",
+    "group": "大脳",
+    "color": [
+      46,
+      157,
+      102
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "slice": {
+      "x": 19.0,
+      "y": -80.53,
+      "z": 2.35
+    }
+  },
+  "Macro-Left-insula": {
+    "ja": "左島",
+    "ja_short": "島",
+    "en": "Left Insula",
+    "en_short": "Insula",
+    "base": "insula",
+    "group": "大脳",
+    "color": [
+      104,
+      123,
+      33
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "slice": {
+      "x": -37.79,
+      "y": 4.29,
+      "z": -0.97
+    }
+  },
+  "Macro-Right-insula": {
+    "ja": "右島",
+    "ja_short": "島",
+    "en": "Right Insula",
+    "en_short": "Insula",
+    "base": "insula",
+    "group": "大脳",
+    "color": [
+      104,
+      123,
+      33
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "slice": {
+      "x": 37.44,
+      "y": 4.29,
+      "z": -0.97
+    }
+  },
+  "Macro-Left-limbic": {
+    "ja": "左大脳辺縁系",
+    "ja_short": "大脳辺縁系",
+    "en": "Left Limbic",
+    "en_short": "Limbic",
+    "base": "limbic",
+    "group": "大脳",
+    "color": [
+      165,
+      128,
+      40
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "merge": "limbic-L",
+    "slice": {
+      "x": -11.24,
+      "y": -11.57,
+      "z": -2.07
+    }
+  },
+  "Macro-Right-limbic": {
+    "ja": "右大脳辺縁系",
+    "ja_short": "大脳辺縁系",
+    "en": "Right Limbic",
+    "en_short": "Limbic",
+    "base": "limbic",
+    "group": "大脳",
+    "color": [
+      165,
+      128,
+      40
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "merge": "limbic-R",
+    "slice": {
+      "x": 12.36,
+      "y": -11.57,
+      "z": -2.07
+    }
+  },
+  "Macro-Left-limbic_deep": {
+    "ja": "左大脳辺縁系",
+    "ja_short": "大脳辺縁系",
+    "en": "Left Limbic",
+    "en_short": "Limbic",
+    "base": "limbic_deep",
+    "group": "大脳",
+    "color": [
+      165,
+      128,
+      40
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "merge": "limbic-L",
+    "slice": {
+      "x": -11.24,
+      "y": -11.57,
+      "z": -2.07
+    }
+  },
+  "Macro-Right-limbic_deep": {
+    "ja": "右大脳辺縁系",
+    "ja_short": "大脳辺縁系",
+    "en": "Right Limbic",
+    "en_short": "Limbic",
+    "base": "limbic_deep",
+    "group": "大脳",
+    "color": [
+      165,
+      128,
+      40
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "merge": "limbic-R",
+    "slice": {
+      "x": 12.36,
+      "y": -11.57,
+      "z": -2.07
+    }
+  },
+  "Macro-Left-basal": {
+    "ja": "左大脳基底核",
+    "ja_short": "大脳基底核",
+    "en": "Left Basal Ganglia",
+    "en_short": "Basal Ganglia",
+    "base": "basal",
+    "group": "深部",
+    "color": [
+      172,
+      86,
+      32
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "slice": {
+      "x": -20.09,
+      "y": 4.65,
+      "z": 0.88
+    }
+  },
+  "Macro-Right-basal": {
+    "ja": "右大脳基底核",
+    "ja_short": "大脳基底核",
+    "en": "Right Basal Ganglia",
+    "en_short": "Basal Ganglia",
+    "base": "basal",
+    "group": "深部",
+    "color": [
+      172,
+      86,
+      32
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "slice": {
+      "x": 19.74,
+      "y": 4.65,
+      "z": 0.88
+    }
+  },
+  "Macro-Left-dienceph": {
+    "ja": "左視床・間脳",
+    "ja_short": "視床・間脳",
+    "en": "Left Thalamus / Diencephalon",
+    "en_short": "Thalamus / Diencephalon",
+    "base": "dienceph",
+    "group": "深部",
+    "color": [
+      235,
+      50,
+      96
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "slice": {
+      "x": -11.24,
+      "y": -17.11,
+      "z": 1.61
+    }
+  },
+  "Macro-Right-dienceph": {
+    "ja": "右視床・間脳",
+    "ja_short": "視床・間脳",
+    "en": "Right Thalamus / Diencephalon",
+    "en_short": "Thalamus / Diencephalon",
+    "base": "dienceph",
+    "group": "深部",
+    "color": [
+      235,
+      50,
+      96
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "slice": {
+      "x": 10.15,
+      "y": -17.11,
+      "z": 1.61
+    }
+  },
+  "Macro-Mid-brainstem": {
+    "ja": "脳幹",
+    "ja_short": "脳幹",
+    "en": "Brain Stem",
+    "en_short": "Brain Stem",
+    "base": "brainstem",
+    "group": "脳幹・小脳",
+    "color": [
+      184,
+      40,
+      157
+    ],
+    "atlas": "macro",
+    "slice": {
+      "x": -0.17,
+      "y": -30.38,
+      "z": -33.05
+    }
+  },
+  "Macro-Left-cerebellum": {
+    "ja": "左小脳",
+    "ja_short": "小脳",
+    "en": "Left Cerebellum",
+    "en_short": "Cerebellum",
+    "base": "cerebellum",
+    "group": "脳幹・小脳",
+    "color": [
+      159,
+      91,
+      241
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "slice": {
+      "x": -22.3,
+      "y": -60.62,
+      "z": -36.0
+    }
+  },
+  "Macro-Right-cerebellum": {
+    "ja": "右小脳",
+    "ja_short": "小脳",
+    "en": "Right Cerebellum",
+    "en_short": "Cerebellum",
+    "base": "cerebellum",
+    "group": "脳幹・小脳",
+    "color": [
+      159,
+      91,
+      241
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "slice": {
+      "x": 21.21,
+      "y": -60.62,
+      "z": -36.0
+    }
+  },
+  "Macro-Left-wm": {
+    "ja": "左白質",
+    "ja_short": "白質",
+    "en": "Left White Matter",
+    "en_short": "White Matter",
+    "base": "wm",
+    "group": null,
+    "color": [
+      245,
+      245,
+      245
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "slice": {
+      "x": -27.46,
+      "y": -20.79,
+      "z": 19.31
+    }
+  },
+  "Macro-Right-wm": {
+    "ja": "右白質",
+    "ja_short": "白質",
+    "en": "Right White Matter",
+    "en_short": "White Matter",
+    "base": "wm",
+    "group": null,
+    "color": [
+      245,
+      245,
+      245
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "slice": {
+      "x": 27.11,
+      "y": -18.58,
+      "z": 18.58
+    }
+  },
+  "Macro-Mid-wm": {
+    "ja": "白質",
+    "ja_short": "白質",
+    "en": "White Matter",
+    "en_short": "White Matter",
+    "base": "wm",
+    "group": null,
+    "color": [
+      245,
+      245,
+      245
+    ],
+    "atlas": "macro",
+    "slice": {
+      "x": -13.45,
+      "y": 5.02,
+      "z": 20.05
+    }
+  },
+  "Macro-Left-ventricle": {
+    "ja": "左脳室系",
+    "ja_short": "脳室系",
+    "en": "Left Ventricles",
+    "en_short": "Ventricles",
+    "base": "ventricle",
+    "group": null,
+    "color": [
+      120,
+      18,
+      134
+    ],
+    "atlas": "macro",
+    "side": "L",
+    "slice": {
+      "x": -14.19,
+      "y": -18.58,
+      "z": 14.15
+    }
+  },
+  "Macro-Right-ventricle": {
+    "ja": "右脳室系",
+    "ja_short": "脳室系",
+    "en": "Right Ventricles",
+    "en_short": "Ventricles",
+    "base": "ventricle",
+    "group": null,
+    "color": [
+      120,
+      18,
+      134
+    ],
+    "atlas": "macro",
+    "side": "R",
+    "slice": {
+      "x": 13.84,
+      "y": -16.37,
+      "z": 14.15
+    }
+  },
+  "Macro-Mid-ventricle": {
+    "ja": "脳室系",
+    "ja_short": "脳室系",
+    "en": "Ventricles",
+    "en_short": "Ventricles",
+    "base": "ventricle",
+    "group": null,
+    "color": [
+      120,
+      18,
+      134
+    ],
+    "atlas": "macro",
+    "slice": {
+      "x": -0.17,
+      "y": -33.33,
+      "z": -15.35
     }
   }
 }

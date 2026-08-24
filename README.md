@@ -10,8 +10,9 @@
 
 - MNI152 標準脳を用いた、3D モデルと断面画像のハイブリッドモデル
 - 断面モードと立体モードを用意
-- アトラスは Desikan-Killiany-Tourville Atlas（解剖学領域 93）と
-  JHU Arterial Atlas（血管支配領域 32）の 2 つ
+- アトラスは 3 つ。解剖学領域のマクロ（脳葉など 10 区分）とミクロ
+  （Desikan-Killiany-Tourville Atlas、93 領域）、JHU Arterial Atlas（血管支配領域 32）
+- 既定はマクロ
 - 座標はすべて world RAS (mm)。メッシュも断面も同じ数値で持つので、座標変換のコードが無い
 - 依存は同梱の three.js r163 だけ。ビルド手順も外部への通信も無い
 - 静的ファイルを配るだけで動く（`python3 -m http.server`）
