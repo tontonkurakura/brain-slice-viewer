@@ -22,7 +22,17 @@
   .seg button.on{background:#2b6fd6;border-color:#5aa0ff}
   .seg button small{display:block;font-size:10px;color:#8fa3cc;margin-top:1px;letter-spacing:.02em}
   .seg button.on small{color:#cfe0ff}
+  .seg+.seg{margin-top:6px}            /* 縦に続く操作子どうしの間隔 */
+  /* その場で効く操作（切る向きの反転）。押しっぱなしの状態を持たないので、
+     幅で見分けが付くようにしてある。切っていないときは効かないので押せない。 */
+  .seg button.act{flex:0 0 auto;padding-left:15px;padding-right:15px}
+  .seg button:disabled{opacity:.4;cursor:default}
   input[type=range]{width:100%}
+  /* スライダーの両端に出すのは向き（頭側・尾側など）。数値は上の行に出す。
+     断面ごとに軸が変わるので、中身は syncSlider が書き換える。 */
+  .posrow{display:flex;align-items:center;gap:7px}
+  .posrow input[type=range]{flex:1;width:auto;min-width:0}
+  .pend{font-size:11px;color:#93a6cf;flex:none;white-space:nowrap}
   #failmsg{position:fixed;left:50%;top:14px;transform:translateX(-50%);z-index:60;
     background:rgba(70,20,25,.95);border:1px solid #a44;border-radius:8px;
     padding:9px 14px;font-size:12px;color:#ffdede;max-width:70vw;line-height:1.6}
@@ -32,7 +42,6 @@
   #atlas button.busy{opacity:.6}
   .row{display:flex;justify-content:space-between;align-items:baseline}
   .val{font-variant-numeric:tabular-nums;color:#9fb5e6}
-  label.chk{display:flex;align-items:center;gap:8px;margin:8px 0;cursor:pointer;font-size:13px}
   /* 左の領域リスト。大分類を畳んでおき、開くと小区分が出る。
      全 95 領域を最初から並べると読む気が失せるので、既定は全部閉じる。 */
   #list{position:fixed;top:14px;left:14px;width:238px;z-index:10;
@@ -53,8 +62,8 @@
   #side{margin-bottom:8px}
   #side button{padding:5px 0 4px;font-size:12px}
   .rgn{display:flex;align-items:center;gap:8px;width:100%;text-align:left;cursor:pointer;
-    padding:3px 6px 3px 10px;margin:0;border:0;border-radius:6px;
-    background:none;color:#c6d3ee;font:inherit;font-size:12px;line-height:1.35}
+    padding:4px 6px 4px 10px;margin:0;border:0;border-radius:6px;
+    background:none;color:#c6d3ee;font:inherit;font-size:13.5px;line-height:1.35}
   .rgn:hover{background:#1b2437;color:#eaf1ff}
   /* 立体モードで隠している領域。押しても何も起きないので、押せなくする */
   .rgn:disabled{opacity:.32;cursor:default}
@@ -62,14 +71,20 @@
   .rgn.on{background:#2b6fd6;color:#fff}
   .sw{width:12px;height:12px;border-radius:3px;flex-shrink:0;
     box-shadow:0 0 0 1px rgba(255,255,255,.22) inset}
-  #hud{position:fixed;left:266px;bottom:14px;z-index:10;font-size:11px;color:#8fa3cc;
-    background:rgba(16,21,33,.85);border:1px solid #2b3550;border-radius:8px;padding:8px 11px;
-    line-height:1.7}
-  #hud b{color:#cfe0ff;font-variant-numeric:tabular-nums}
+  /* 出典と注意書き。画面の下に 1 行。読む邪魔をしないよう、当たり判定は持たせない
+     （下のモデルにカーソルが届く）。狭い画面では下のバーの中へ移す。 */
+  #note{position:fixed;left:50%;bottom:9px;transform:translateX(-50%);z-index:10;
+    pointer-events:none;font-size:11px;line-height:1.5;color:#6f82a8;text-align:center;
+    max-width:92vw;white-space:nowrap}
+  #note span+span::before{content:'／';color:#465773;margin:0 .45em}
+  #note b{color:#8fa3cc;font-weight:600}
   /* SVG は幅・高さを明示しないと既定の 300x150 になり、線がクリップされる */
   #lead{position:fixed;left:0;top:0;width:100vw;height:100vh;
     z-index:25;pointer-events:none;display:none;overflow:visible}
+  /* box-sizing は max-width のために要る。content-box のままだと、狭い窓で
+     幅を抑えても padding（左右 15px + 枠）のぶんはみ出して UI に重なる。 */
   .tip{position:fixed;z-index:30;pointer-events:none;display:none;white-space:nowrap;
+    box-sizing:border-box;
     background:rgba(12,18,35,.94);border:1px solid rgba(120,160,230,.45);
     border-radius:9px;padding:11px 15px;box-shadow:0 4px 18px rgba(0,0,0,.55)}
   .tip .ja{font-size:19px;font-weight:600;color:#eaf1ff;line-height:1.25;
@@ -77,6 +92,12 @@
   .tip .ja .sw{width:14px;height:14px;border-radius:4px}
   .tip .en{font-size:13px;color:#9ab0df;margin-top:3px}
   .tip .gp{font-size:12px;color:#8b9dc0;margin-top:7px}
+  /* 選択のパネルは領域ごとに 1 枚で、脳の上に横へ並べる。並びきらないときは
+     この順で削る: 英語名と大分類を落とす -> 名前を小さくする。 */
+  .tip.c1 .en,.tip.c1 .gp,.tip.c2 .en,.tip.c2 .gp{display:none}
+  .tip.c2{white-space:normal}          /* ここまで詰めたら、長い名前は折り返す */
+  .tip.c2 .ja{font-size:15px;gap:7px}
+  .tip.c2 .ja .sw{width:11px;height:11px}
   /* 選択のパネルはホバーのものと同じ見た目。留まるかどうかだけが違う */
   #clearSel{display:none;margin-left:auto;cursor:pointer;font:inherit;font-size:11px;
     color:#cfe0ff;background:#25314c;border:1px solid #3b4a6b;border-radius:5px;padding:2px 7px}
@@ -100,7 +121,7 @@
   @media (max-height:520px){
     /* さらに狭いときはパネル自体を詰める。UI に重ねるよりは小さくするほうがよい */
     .seg button{padding:4px 0 3px}
-    label.chk{margin:3px 0}
+    .seg+.seg{margin-top:4px}
     .tip{padding:7px 10px;border-radius:7px}
     .tip .ja{font-size:15px;gap:7px}
     .tip .ja .sw{width:11px;height:11px}
@@ -109,9 +130,9 @@
     #list{max-height:46vh}
   }
   @media (max-width:720px){
-    #list{width:170px;max-height:52vh;font-size:12px;padding:10px 5px 9px 11px}
-    .rgn{font-size:11px;padding-left:8px}
-    #hud{display:none}
+    #list{width:170px;max-height:52vh;font-size:12.5px;padding:10px 5px 9px 11px}
+    .rgn{font-size:12.5px;padding-left:8px}
+    #note{font-size:10px;white-space:normal}
   }
 
   /* ───────── 狭い画面（スマホ）─────────
@@ -132,10 +153,15 @@
   #openList{flex:1}
   #barMode{flex:1;display:flex}
   #barMode .seg{flex:1}
-  #bar #posBlock{flex:1;display:flex;align-items:center;gap:10px;min-width:0}
-  #bar #posBlock .lbl{margin:0;order:2;flex:none}
-  #bar #posBlock .poslbl{display:none}
-  #bar #posBlock #pos{order:1;flex:1;min-width:0}
+  #bar #posBlock{flex:1;display:flex;align-items:center;min-width:0}
+  /* 狭い画面では mm の数値を出さない（HUD も消えている）。両端の向きで足りる */
+  #bar #posBlock .lbl{display:none}
+  #bar #posBlock .posrow{flex:1;min-width:0}
+  #bar .pend{font-size:13px;color:#a8bce4}
+  /* バーの中に入れたときは、固定配置をやめて最後の行として流す */
+  #bar #note{position:static;transform:none;max-width:none;font-size:10px;margin:0 auto;
+    white-space:normal}
+  body.narrow #note .wide{display:none}      /* 狭い画面では出典を 2 つに絞る */
   #scrim{display:none;position:fixed;inset:0;z-index:25;background:rgba(4,6,11,.5)}
   #scrim.on{display:block}
 
@@ -148,7 +174,8 @@
   body.narrow #list.open,
   body.narrow #panel.open{transform:none}
   body.narrow #panel{overflow-y:auto}
-  body.narrow #list{max-height:76vh}
+  body.narrow #list{max-height:76vh;font-size:14px}
+  body.narrow .rgn{font-size:15px;padding:7px 6px 7px 10px}
   body.narrow #bar{display:flex}
   @media (prefers-reduced-motion:reduce){
     body.narrow #list, body.narrow #panel{transition:none}
@@ -173,8 +200,8 @@
 
   <div class="lbl" style="margin-top:11px">アトラス</div>
   <div class="seg" id="atlas">
-    <button data-a="dkt" class="on">DKT<small>皮質・皮質下</small></button>
-    <button data-a="arterial">血管支配<small>ACA / MCA / PCA / VB</small></button>
+    <button data-a="dkt" class="on">解剖学領域</button>
+    <button data-a="arterial">血管支配領域</button>
   </div>
   <div id="atlasMsg"></div>
 
@@ -188,13 +215,17 @@
 
   <div id="posBlock">
     <div class="lbl row"><span class="poslbl">位置 (world mm)</span><span class="val" id="pv">0.0</span></div>
-    <input type="range" id="pos">
+    <div class="posrow"><span class="pend" id="endLo"></span
+      ><input type="range" id="pos"><span class="pend" id="endHi"></span></div>
   </div>
 
   <div class="lbl">重ね方</div>
-  <label class="chk"><input type="checkbox" id="cLabel" checked> 領域色を重ねる</label>
-  <label class="chk"><input type="checkbox" id="cClip" checked> モデルを断面で切る</label>
-  <div class="seg" style="margin-top:8px;"><button id="flip">切る向きを反転</button></div>
+  <div class="seg"><button id="cLabel" class="on">領域色を重ねる</button></div>
+  <!-- 反転は「切る」にぶら下がる操作なので、同じ行に置いて、切らないときは押せなくする -->
+  <div class="seg">
+    <button id="cClip" class="on">モデルを断面で切る</button>
+    <button id="flip" class="act" title="切る向きを反転">反転</button>
+  </div>
   </div>
 
   <!-- 立体モードだけの操作。断面モードでは丸ごと隠す -->
@@ -205,7 +236,7 @@
     <button data-h="L">左<small>Left</small></button>
     <button data-h="R">右<small>Right</small></button>
   </div>
-  <label class="chk" id="cCortexRow"><input type="checkbox" id="cCortex" checked> 皮質を表示</label>
+  <div class="seg" id="cCortexRow"><button id="cCortex" class="on">皮質を表示</button></div>
   </div>
 </div>
 
@@ -235,7 +266,15 @@
 </div>
 <div id="scrim"></div>
 
-<div id="hud"></div>
+<!-- 出典と注意書き。狭い画面では relayout() が下のバーへ移す（複製しない）。
+     .wide は狭い画面で落とす。落ちてもよい順に**後ろから**並べてある
+     （区切りは span+span の ::before で入れるので、前を消すと先頭に出てしまう） -->
+<div id="note">
+  <span><span class="wide">教育・参照用。</span>臨床判断には使わない</span
+  ><span><span class="wide">血管支配 </span><b>JHU Arterial Atlas</b> CC BY-SA 4.0</span
+  ><span class="wide">MNI152 標準脳（個人の MRI ではない）</span
+  ><span class="wide">three.js MIT</span>
+</div>
 
 <!-- 引き出し線。色の線の下に黒い線を敷いて、断面のどんな色の上でも見えるようにする -->
 <svg id="lead">
@@ -245,7 +284,7 @@
   <line id="lnH" stroke="#7fd0ff" stroke-width="1.8" stroke-linecap="round"/>
   <circle id="leaddot" r="3.4" fill="none" stroke="#7fd0ff" stroke-width="1.8"/>
 </svg>
-<div id="tipS" class="tip"></div>
+<div id="tipS" class="tip sel"></div>
 <div id="tipH" class="tip"></div>
 
 <!-- three.js は同梱する（vendor/three、0.163.0 を固定）。CDN から読むと、
@@ -288,6 +327,25 @@ const IDX = { x:0, y:1, z:2 };
 const noCache = { cache: 'no-cache' };
 const meta = await (await fetch(`${ROOT}/slice_metadata.json`, noCache)).json();
 const labels = await (await fetch('labels.json', noCache)).json();
+
+/* 左右に分かれてはいるが、実体が 1 つの領域（脳底動脈）。生成側が `merge` を
+   付けている。メッシュのノードと LUT の対応を崩さないよう、キーは左右のまま
+   残してあり、**束ねるのは見せ方だけ**——名前・パネル・選択・アンカーを 1 つにする。
+
+   キーにアトラス名を混ぜるのは、別のアトラスが同じ略号を使ったときの衝突を
+   避けるため（色は実際に衝突している）。 */
+const MERGED = new Map();
+for (const [k, v] of Object.entries(labels)) {
+  if (!v.merge) continue;
+  const g = `${v.atlas}/${v.merge}`;
+  if (!MERGED.has(g)) MERGED.set(g, []);
+  MERGED.get(g).push(k);
+}
+const groupKey = n => {
+  const v = labels[n];
+  return (v && v.merge) ? `${v.atlas}/${v.merge}` : n;
+};
+const groupOf = n => MERGED.get(groupKey(n)) || [n];
 
 /* 断面上のホバー判定は、ラベル画像の画素の色から領域を逆引きして行う。
    ただし FreeSurfer の LUT は左右の同名構造に同じ色を割り当てているため
@@ -608,15 +666,16 @@ const NARROW = matchMedia('(max-width: 640px)');
 const state = { plane: (Q.get('plane')||'axial'), mode: (Q.get('mode')||'slice'),
                 atlas: (Q.get('atlas')||'dkt'), side:'L',
                 half:'both', cortex:true,          // 立体モードの見せ方
-                world:{x:0,y:0,z:0}, clip:true };
+                overlay:true, cut:true,            // 重ね方（操作子の状態）
+                world:{x:0,y:0,z:0}, clip:true };  // clip は cut の実効値
 
 /* アトラスの定義。大分類の並び順はここで決める（labels.json の並びは
    生成側の宣言順で、読みたい順とは違う）。model は viewer.html からの相対。 */
 const ATLASES = {
-  dkt: { name:'DKT', model:'brain.glb',
+  dkt: { name:'解剖学領域', model:'brain.glb',
          groups:['前頭葉','頭頂葉','側頭葉','後頭葉','大脳辺縁系','大脳基底核',
                  '視床・間脳','脳幹','小脳'] },
-  arterial: { name:'血管支配', model:'brain_arterial.glb',
+  arterial: { name:'血管支配領域', model:'brain_arterial.glb',
               groups:['前大脳動脈','中大脳動脈','後大脳動脈','椎骨脳底動脈','脳室'] },
 };
 
@@ -690,12 +749,6 @@ function apply(){
   layoutPlane(p, w);
   showSlice(p, w);
   document.getElementById('pv').textContent = w.toFixed(1);
-  const at = meta.planes[p].atlas;
-  document.getElementById('hud').innerHTML =
-    `断面 <b>${AX[p]} = ${w.toFixed(1)} mm</b> (world RAS)<br>` +
-    `画像 <b>アトラス ${at.cols}×${at.rows} のタイル ${sliceIndex(p, w)}</b><br>` +
-    `クリップ平面 <b>${AX[p]} = ${w.toFixed(1)} mm</b> — 同じ値<br>` +
-    `<span style="color:#6f82a8">座標変換は行っていない</span>`;
 }
 
 /* ---- モデル ---------------------------------------------------------- */
@@ -795,11 +848,19 @@ function fitView(){
 
 /* ---- UI -------------------------------------------------------------- */
 const posEl = document.getElementById('pos');
+
+/* スライダーの両端に出す向き。world_coords は昇順なので、左端が負の側になる。
+   RAS では -x=左 / -y=後 / -z=尾側。訳語を変えるならここだけ。 */
+const ENDS = { sagittal:['左','右'], coronal:['後方','前方'], axial:['尾側','頭側'] };
+const endLo = document.getElementById('endLo');
+const endHi = document.getElementById('endHi');
+
 function syncSlider(){
   const w = meta.planes[state.plane].world_coords;
   posEl.min = w[0].toFixed(1); posEl.max = w[w.length-1].toFixed(1);
   posEl.step = Math.abs(w[1]-w[0]).toFixed(4);
   posEl.value = state.world[AX[state.plane]];
+  [endLo.textContent, endHi.textContent] = ENDS[state.plane];
 }
 document.querySelectorAll('#axis button').forEach(b=>{
   b.classList.toggle('on', b.dataset.p === state.plane);
@@ -810,8 +871,18 @@ document.querySelectorAll('#axis button').forEach(b=>{
   };
 });
 posEl.oninput = e=>{ state.world[AX[state.plane]] = parseFloat(e.target.value); apply(); };
-document.getElementById('cLabel').onchange = e=>{ labMesh.visible = e.target.checked; };
-document.getElementById('cClip').onchange = ()=> applyMode();
+/* 重ね方の 2 つは、押すと状態が反転する操作子。チェックボックスをやめたのは、
+   断面／立体や左／右と同じ見た目に揃えるため。状態は `on` が付いているかで見せる。 */
+const cLabelBtn = document.getElementById('cLabel');
+const cClipBtn = document.getElementById('cClip');
+const flipBtn = document.getElementById('flip');
+
+cLabelBtn.onclick = ()=>{
+  state.overlay = !state.overlay;
+  cLabelBtn.classList.toggle('on', state.overlay);
+  labMesh.visible = state.overlay;
+};
+cClipBtn.onclick = ()=>{ state.cut = !state.cut; applyMode(); };
 
 /* 皮質とみなすもの。大脳白質も一緒に隠す。皮質だけ消すと白い殻が残り、
    結局その中の皮質下構造が見えない。 */
@@ -842,7 +913,10 @@ function applyVisibility(){
   }
   modelBox = null;                       // 見えている範囲が変わった
   if (hovered && meshByName.get(hovered) && !meshByName.get(hovered).visible) setHover(null);
-  if (selected && meshByName.get(selected) && !meshByName.get(selected).visible) setSelected(null);
+  for (const n of [...sel]) {
+    const o = meshByName.get(n);
+    if (o && !o.visible) setSel(n, false);
+  }
 }
 
 document.querySelectorAll('#half button').forEach(b=>{
@@ -853,8 +927,11 @@ document.querySelectorAll('#half button').forEach(b=>{
     applyVisibility(); layoutCallouts();
   };
 });
-document.getElementById('cCortex').onchange = e=>{
-  state.cortex = e.target.checked; applyVisibility(); layoutCallouts();
+const cCortexBtn = document.getElementById('cCortex');
+cCortexBtn.onclick = ()=>{
+  state.cortex = !state.cortex;
+  cCortexBtn.classList.toggle('on', state.cortex);
+  applyVisibility(); layoutCallouts();
 };
 
 /* ───────────── 表示モード ─────────────
@@ -874,11 +951,12 @@ function applyMode(){
   /* 血管支配アトラスに「皮質」という区分は無いので、その切り替えは出さない */
   document.getElementById('cCortexRow').style.display =
     (solid && state.atlas === 'dkt') ? '' : 'none';
-  document.getElementById('hud').style.display = solid ? 'none' : '';
   sliceMesh.visible = !solid && uiReady && !!lblData;
 
-  // クリップは断面モードのチェックにだけ従う。既に読んだモデルにも掛け直す
-  state.clip = !solid && document.getElementById('cClip').checked;
+  // クリップは断面モードの操作子にだけ従う。既に読んだモデルにも掛け直す
+  state.clip = !solid && state.cut;
+  cClipBtn.classList.toggle('on', state.cut);
+  flipBtn.disabled = !state.cut;        // 切っていないときは反転しても何も起きない
   for (const m of models.values())
     m.mats.forEach(x => { x.clippingPlanes = state.clip ? [clip] : []; x.needsUpdate = true; });
 
@@ -902,6 +980,13 @@ document.getElementById('flip').onclick = ()=>{ clipSide = -clipSide; applyClip(
    左右が隣り合うのはそのため。大分類の順だけはここで決める（表示の都合）。 */
 
 const EM_HOVER = 0x2a3550;
+
+/* 選択は**複数持てる**。一覧・断面・3D のどこから触っても同じ集合に入り、
+   同じものをもう一度押すと外れる。修飾キーは要らない——タッチでは押せない。
+
+   `selected` は最後に選んだ 1 つ。表示には使わず、外から状態を見る口
+   （__state）と、置き場が 1 つしか取れないときの代表としてだけ使う。 */
+const sel = new Set();
 let selected = null;
 const itemByName = new Map();
 
@@ -914,10 +999,10 @@ const itemByName = new Map();
 function paint(name){
   const m = meshByName.get(name);
   if (!m) return;
-  if (name === selected) {
+  if (sel.has(name)) {
     m.material.emissive.copy(m.material.color).multiplyScalar(.55);
   } else {
-    m.material.emissive.setHex(name === hovered ? EM_HOVER : 0x000000);
+    m.material.emissive.setHex(hoverSet.has(name) ? EM_HOVER : 0x000000);
     m.material.emissiveIntensity = 1;
   }
 }
@@ -932,27 +1017,64 @@ function applyFocus(){
     const m = o.material;
     if (!m.userData.base) m.userData.base = m.color.clone();
     m.color.copy(m.userData.base);
-    if (selected && n !== selected) m.color.multiplyScalar(.3);
+    if (sel.size && !sel.has(n)) m.color.multiplyScalar(.3);
   }
 }
 
 const clearBtn = document.getElementById('clearSel');
-clearBtn.onclick = () => setSelected(null);
+clearBtn.onclick = () => clearSelection();
 
-function setSelected(name){
-  const prev = selected;
-  selected = name;
+/* パネルを脳の上に横へ並べる都合で、選べるのは 3 つまで。4 つ目を押すと
+   いちばん古いものが外れる。押しても何も起きないより、何が起きたか見えるほうがよい。 */
+const MAX_SEL = 3;
+
+/* 1 つ足す / 外す。色は選択の有無で決まるので、変わった 1 つだけでなく
+   選択中すべてを塗り直す（周りを落とす倍率が集合の大きさで変わる）。 */
+function setSel(name, on){
+  if (!name) return;
+  const group = groupOf(name);               // 脳底動脈は左右の 2 つで 1 つ
+  const dropped = [];
+  if (on) {
+    if (!sel.has(name) && selGroups().length >= MAX_SEL) {
+      // いちばん古い**群**をまとめて外す。1 つだけ外すと片側が残る
+      for (const n of groupOf(sel.values().next().value)) {
+        if (sel.delete(n)) dropped.push(n);
+      }
+    }
+    for (const n of group) sel.add(n);
+  } else {
+    for (const n of group) sel.delete(n);
+  }
+  selected = on ? name : ([...sel].pop() || null);
   applyFocus();
-  paint(prev); paint(name);
-  for (const [n, el] of itemByName) el.classList.toggle('on', n === name);
-  clearBtn.classList.toggle('on', !!name);
-  if (name) fillTip(tipS, name);
+  for (const n of [...group, ...dropped, ...sel]) paint(n);
+  syncSelUI();
 }
 
+/* 選択を「見せる単位」で数える。脳底動脈は sel に 2 つ入るが 1 つと数える。 */
+const selGroups = () => [...new Set([...sel].map(groupKey))];
+
+function clearSelection(){
+  const had = [...sel];
+  sel.clear(); selected = null;
+  applyFocus();
+  for (const n of had) paint(n);
+  syncSelUI();
+}
+
+function syncSelUI(){
+  for (const [n, el] of itemByName) el.classList.toggle('on', sel.has(n));
+  clearBtn.classList.toggle('on', sel.size > 0);
+  const n = selGroups().length;
+  clearBtn.textContent = n > 1 ? `選択を解除 (${n})` : '選択を解除';
+}
+
+/* 一覧から選ぶ。足したときだけ代表スライスへ飛ぶ。外したときに飛ぶと、
+   消したはずのものに画面が引っ張られる。 */
 function selectRegion(name){
-  if (selected === name) { setSelected(null); return; }   // もう一度押すと解除
-  setSelected(name);
-  if (state.mode === 'solid') return;      // 断面が無いので飛び先も無い。強調だけ
+  const on = !sel.has(name);
+  setSel(name, on);
+  if (!on || state.mode === 'solid') return;  // 断面が無いので飛び先も無い
   const s = labels[name] && labels[name].slice;
   if (!s) return;                       // 代表スライス未収録なら強調だけ
   const a = AX[state.plane];
@@ -978,9 +1100,15 @@ function buildTree(){
   tree.innerHTML = '';
   itemByName.clear();
   const buckets = new Map();
+  const seenGroup = new Set();
   for (const [name, v] of Object.entries(labels)) {
     if (!v.group || (v.atlas || 'dkt') !== state.atlas) continue;
     if (v.side && v.side !== state.side) continue;
+    // 実体が 1 つのものは 1 行だけ出す。左右どちらを押しても両方が入る
+    if (v.merge) {
+      if (seenGroup.has(groupKey(name))) continue;
+      seenGroup.add(groupKey(name));
+    }
     if (!buckets.has(v.group)) buckets.set(v.group, []);
     buckets.get(v.group).push([name, v]);
   }
@@ -1008,7 +1136,7 @@ function buildTree(){
   /* 作り直すとボタンごと入れ替わるので、選択中の印と「押せるか」を付け直す。
      ここを忘れると、左右を切り替えた直後だけ隠れた領域が押せてしまう。 */
   for (const [n, el] of itemByName) {
-    el.classList.toggle('on', n === selected);
+    el.classList.toggle('on', sel.has(n));
     const o = meshByName.get(n);
     el.disabled = !!o && !o.visible;
   }
@@ -1039,7 +1167,7 @@ async function setAtlas(a){
   const btns = [...document.querySelectorAll('#atlas button')];
   btns.forEach(x => { x.classList.toggle('on', x.dataset.a === a); x.classList.add('busy'); });
 
-  setSelected(null); setHover(null);
+  clearSelection(); setHover(null);
   state.atlas = a;
   // 前のアトラスの画素で名前を引かせない。新しい板が届くまで判定を止める
   lblData = null; anchors = new Map();
@@ -1060,7 +1188,7 @@ document.querySelectorAll('#atlas button').forEach(b => {
   b.onclick = () => setAtlas(b.dataset.a);
 });
 
-addEventListener('keydown', e => { if (e.key === 'Escape') setSelected(null); });
+addEventListener('keydown', e => { if (e.key === 'Escape') clearSelection(); });
 
 /* ───────────── ホバーによる領域表示 ─────────────
    断面と 3D で判定方法が違う。
@@ -1079,6 +1207,7 @@ const ndc = new THREE.Vector2();
 const leadEl = document.getElementById('lead');
 const dotEl = document.getElementById('leaddot');
 let hovered = null, ptr = null, ptrDirty = false;
+let hoverSet = new Set();          // 光らせている群（脳底動脈は 2 メッシュ）
 
 /* パネルを出さない領域。大脳白質は面積が大きく、指しても情報にならない。 */
 const NO_PANEL = new Set([
@@ -1178,13 +1307,27 @@ function meshCenter(name){
   return c;
 }
 
-function anchorScreen(name){
-  if (state.mode === 'solid') {
-    const c = meshCenter(name);
-    return c ? toScreen(c) : null;
-  }
+function anchorPointOne(name){
+  if (state.mode === 'solid') return meshCenter(name);
   const a = anchors.get(name);
-  return (a && lblData) ? toScreen(pixelToWorld(a[0], a[1])) : null;
+  return (a && lblData) ? pixelToWorld(a[0], a[1]) : null;
+}
+
+/* 群で 1 つのアンカーにする。**平均は world 座標で取る。**画面上で平均すると、
+   投影のぶん値が視点に依存する（座標契約どおり、位置の話は world で完結させる）。
+   左右の代表点の平均なので、脳底動脈では x ≈ 0 の正中に来る。
+   片側しか断面に出ていなければ、その 1 点になる（無い側は数えない）。 */
+function anchorPoint(name){
+  const pts = groupOf(name).map(anchorPointOne).filter(Boolean);
+  if (!pts.length) return null;
+  const c = new THREE.Vector3();
+  for (const p of pts) c.add(p);
+  return c.multiplyScalar(1 / pts.length);
+}
+
+function anchorScreen(name){
+  const p = anchorPoint(name);
+  return p ? toScreen(p) : null;
 }
 
 function brainSpanScreen(){
@@ -1231,19 +1374,55 @@ const tipH = document.getElementById('tipH');
 const lineS = [document.getElementById('loS'), document.getElementById('lnS')];
 const lineH = [document.getElementById('loH'), document.getElementById('lnH')];
 
+/* 選択は複数あるので、パネルも線も 1 つでは足りない。0 番目は HTML に書いてある
+   #tipS / #loS / #lnS をそのまま使い、足りなくなったら複製して足す。 */
+const selPanels = [tipS];
+function selPanel(i){
+  while (selPanels.length <= i) {
+    const c = tipS.cloneNode(false);
+    c.removeAttribute('id');
+    /* data-name も複製される。消しておかないと、複製元と同じ領域が割り当たった
+       ときに「中身は変わっていない」と見なして、空のパネルが出る。 */
+    c.removeAttribute('data-name');
+    document.body.appendChild(c);
+    selPanels.push(c);
+  }
+  return selPanels[i];
+}
+
+const selLines = [lineS];
+function selLine(i){
+  while (selLines.length <= i)
+    selLines.push(lineS.map(l => {
+      const c = l.cloneNode();
+      c.removeAttribute('id');
+      leadEl.appendChild(c);
+      return c;
+    }));
+  return selLines[i];
+}
+const hideSelLines = (from = 0) => { for (let k = from; k < selLines.length; k++) hideLine(selLines[k]); };
+
 /* 断面が手前を向いていないときは選択のパネルも出さない。
    面全体の向きの話なので、クリップ平面とカメラの位置関係だけで決まる。 */
 const faceVisible = () =>
   state.clip && (clip.normal.dot(camera.position) + clip.constant) < 0;
 
-function fillTip(el, name){
+/* パネルの 1 行。ホバーも選択もこれを使う。選択は「ホバーのパネルがその場に
+   留まったもの」なので、中身が食い違うと別物に見える。 */
+function rowHTML(name){
   const v = labels[name];
-  if (!v) return;
+  if (!v) return '';
   const c = v.color ? `rgb(${v.color.join(',')})` : '#888';
-  el.innerHTML =
-    `<div class="ja"><span class="sw" style="background:${c}"></span>${v.ja}</div>` +
-    `<div class="en">${v.en}</div>` +
-    (v.group ? `<div class="gp">${v.group}</div>` : '');
+  return `<div class="srow" data-name="${name}">` +
+         `<div class="ja"><span class="sw" style="background:${c}"></span>${v.ja}</div>` +
+         `<div class="en">${v.en}</div>` +
+         (v.group ? `<div class="gp">${v.group}</div>` : '') +
+         `</div>`;
+}
+
+function fillTip(el, name){
+  if (labels[name]) el.innerHTML = rowHTML(name);
 }
 
 function setLine(ls, x1, y1, x2, y2){
@@ -1258,7 +1437,7 @@ const hideLine = ls => { for (const l of ls) l.style.display = 'none'; };
 /* パネルを置いてはいけない矩形。UI のパネルは畳み方や画面幅で動くので毎回読む。 */
 function uiRects(){
   const out = [];
-  for (const id of ['list', 'panel', 'hud', 'bar']) {
+  for (const id of ['list', 'panel', 'note', 'bar']) {
     const el = document.getElementById(id);
     if (el && el.offsetHeight) out.push(el.getBoundingClientRect());
   }
@@ -1283,17 +1462,15 @@ function fitY(x, w, h, prefY, obs){
 }
 
 /* パネルを脳の外側に置く。UI のパネルと、もう 1 枚のパネルを避ける。
-   避けきれないときは隠さずに本来の位置へ置く（見えないより重なるほうがまし）。 */
-function placeTip(el, ls, name, origin, avoid){
+   避けきれないときは隠さずに本来の位置へ置く（見えないより重なるほうがまし）。
+   置き場を返すだけで、線も表示も触らない。 */
+function sideSpot(el, name, obs){
   const a = anchorScreen(name), span = brainSpanScreen();
-  if (!a || !span) { el.style.display = 'none'; hideLine(ls); return null; }
+  if (!a || !span) return null;
   const [ax, ay] = a;                    // パネル位置の基準（カーソルでは動かない）
   const [sx0, sx1] = span;
 
-  el.style.display = 'block';
   const w = el.offsetWidth, h = el.offsetHeight, gap = 46;
-  const obs = uiRects();
-  if (avoid) obs.push(avoid);
   const prefLeft = ax < (sx0 + sx1) / 2, prefY = ay - h / 2;
 
   const clampX = x => Math.max(8, Math.min(innerWidth - w - 8, x));
@@ -1322,28 +1499,155 @@ function placeTip(el, ls, name, origin, avoid){
     px = clampX(prefLeft ? sx0 - gap - w : sx1 + gap);
     py = Math.max(8, Math.min(innerHeight - h - 8, prefY));
   }
-  el.style.left = px + 'px';
-  el.style.top = py + 'px';
+  return { px, py, left, w, h };
+}
+
+/* ホバーのパネル。カーソルを起点に 1 本引く。avoid は選択のパネル（複数）。 */
+function placeTip(el, ls, name, origin, avoid){
+  el.style.display = 'block';            // 幅を測るので、測る前に出す
+  const obs = uiRects();
+  if (avoid) obs.push(...avoid);
+  const s = sideSpot(el, name, obs);
+  if (!s) { el.style.display = 'none'; hideLine(ls); return null; }
+  el.style.left = s.px + 'px';
+  el.style.top = s.py + 'px';
   const [ox, oy] = origin;
-  setLine(ls, ox, oy, left ? px + w : px, py + h / 2);
-  return { left: px, right: px + w, top: py, bottom: py + h };
+  setLine(ls, ox, oy, s.left ? s.px + s.w : s.px, s.py + s.h / 2);
+  return { left: s.px, right: s.px + s.w, top: s.py, bottom: s.py + s.h };
+}
+
+/* 選択のパネルを置く高さと、パネルどうしの間隔。
+   上端に貼り付けない——窓の縁との間に空きがあるほうが読みやすい。 */
+const SEL_TOP = 36, SEL_GAP = 10;
+
+/* 画面上端の帯（高さ h のものを置ける横の範囲）。
+   左右の UI は縦に長いので、空くのはその間になる。 */
+function topBand(h){
+  let lo = 8, hi = innerWidth - 8;
+  for (const r of uiRects()) {
+    if (r.top > SEL_TOP + h + 6) continue;            // 帯より下にある
+    if (r.left + r.right < innerWidth) lo = Math.max(lo, r.right + 8);
+    else hi = Math.min(hi, r.left - 8);
+  }
+  return (hi - lo < 80) ? null : [lo, hi];
+}
+
+/* 選択のパネルは**脳の上**——画面上端の帯に、領域ごとに 1 枚ずつ横へ並べる。
+   左右の UI に挟まれたここはふだん空いている。
+
+   **並べる順は画面上のアンカーの x 順。**こうすると引き出し線が交差しない。
+   同じ高さから出た線どうしは、始点も終点も同じ順に並んでいれば交わらない
+   （どの高さでも x の差の符号が変わらない）。線は**パネルの下**から出す。
+   パネルが上にあるので、横から出すと必ず回り込む形になる。
+
+   並びきらないときは、この順で詰める:
+     英語名と大分類を落とす -> 名前を小さくする -> それでも駄目なら段を足す */
+function layoutSelPanels(list){
+  const n = list.length;
+
+  // 中身。書き換えるのは変わったときだけ（毎フレーム触ると測り直しになる）
+  for (let i = 0; i < n; i++) {
+    const el = selPanel(i);
+    if (el.dataset.name !== list[i].name) {
+      el.innerHTML = rowHTML(list[i].name);
+      el.dataset.name = list[i].name;
+    }
+    el.style.display = 'block';
+  }
+  for (let i = n; i < selPanels.length; i++) selPanels[i].style.display = 'none';
+
+  // 帯（横に使える範囲）。高さは、いちばん背の高い書き方で見ておく
+  for (let i = 0; i < n; i++) selPanels[i].className = 'tip sel';
+  let h0 = 0;
+  for (let i = 0; i < n; i++) h0 = Math.max(h0, selPanels[i].offsetHeight);
+  const band = topBand(h0);
+  if (!band) return null;                          // 帯そのものが無い
+  const [lo, hi] = band;
+
+  // 詰め方を決める。1 段に収まる書き方のうち、いちばん情報の多いものを採る
+  let w = [];
+  for (const t of ['', 'c1', 'c2']) {
+    for (let i = 0; i < n; i++) {
+      const el = selPanels[i];
+      el.classList.toggle('c1', t === 'c1');
+      el.classList.toggle('c2', t === 'c2');
+      // 最後の手段では、帯からはみ出すより折り返させる
+      el.style.maxWidth = t === 'c2' ? (hi - lo) + 'px' : '';
+    }
+    w = [];
+    let sum = 0;
+    for (let i = 0; i < n; i++) { w.push(selPanels[i].offsetWidth); sum += w[i]; }
+    if (sum + SEL_GAP * (n - 1) <= hi - lo) break;
+  }
+
+  // 段に割る。左から順に詰めるので、段が増えても x 順は保たれる
+  const rows = [];
+  let cur = [], curW = 0;
+  for (let i = 0; i < n; i++) {
+    if (cur.length && curW + SEL_GAP + w[i] > hi - lo) { rows.push(cur); cur = []; curW = 0; }
+    curW += (cur.length ? SEL_GAP : 0) + w[i];
+    cur.push(i);
+  }
+  if (cur.length) rows.push(cur);
+
+  const boxes = [];
+  let y = SEL_TOP, k = 0;
+  for (const row of rows) {
+    let hMax = 0;
+    for (const i of row) hMax = Math.max(hMax, selPanels[i].offsetHeight);
+    // 本来はアンカーの真上。重なる分だけ左から押し、右端からも押し戻す
+    const x = row.map(i => list[i].ax - w[i] / 2);
+    let left = lo;
+    for (let c = 0; c < row.length; c++) {
+      x[c] = Math.max(x[c], left);
+      left = x[c] + w[row[c]] + SEL_GAP;
+    }
+    let right = hi;
+    for (let c = row.length - 1; c >= 0; c--) {
+      x[c] = Math.max(lo, Math.min(x[c], right - w[row[c]]));
+      right = x[c] - SEL_GAP;
+    }
+    for (let c = 0; c < row.length; c++) {
+      const i = row[c], el = selPanels[i], px = x[c], pw = w[i], ph = el.offsetHeight;
+      el.style.left = px + 'px';
+      el.style.top = y + 'px';
+      /* 線はパネルの下から。出る位置はアンカーの真下に寄せる（パネルの中に
+         収める）。パネルが x 順に並んでいるので、この始点も x 順のまま。 */
+      const sx = Math.max(px + 14, Math.min(px + pw - 14, list[i].ax));
+      setLine(selLine(k++), list[i].ax, list[i].ay, sx, y + ph);
+      boxes.push({ left: px, right: px + pw, top: y, bottom: y + ph });
+    }
+    y += hMax + SEL_GAP;
+  }
+  hideSelLines(k);
+  return boxes;
+}
+
+function hideSelPanels(){
+  for (const el of selPanels) el.style.display = 'none';
+  hideSelLines();
 }
 
 function layoutCallouts(){
-  let avoid = null;
-  /* 断面モードでは、断面が手前を向いていないときは選択のパネルも出さない。
-     立体モードにはその条件が無い（面ではなくモデルを見ているため）。 */
-  const selOk = selected &&
-    (state.mode === 'solid' ? !!meshByName.get(selected)
-                            : (faceVisible() && anchors.has(selected)));
-  const selA = selOk ? anchorScreen(selected) : null;
-  if (selA) {
-    avoid = placeTip(tipS, lineS, selected, selA, null);
-  } else {
-    tipS.style.display = 'none'; hideLine(lineS);
+  /* 出すのは**いま画面に出ている領域だけ**。断面に無いものは線が引けないので、
+     名前も出さない。断面が手前を向いていないときは選択のパネルごと出さない
+     （立体モードにはその条件が無い。面ではなくモデルを見ているため）。 */
+  const show = sel.size > 0 && (state.mode === 'solid' || faceVisible());
+  const list = [];
+  const done = new Set();
+  if (show) for (const n of sel) {
+    const g = groupKey(n);
+    if (done.has(g)) continue;               // 脳底動脈は左右で 1 枚
+    const a = anchorScreen(n);
+    if (!a) continue;
+    done.add(g);
+    list.push({ name: n, ax: a[0], ay: a[1] });
   }
+  list.sort((p, q) => p.ax - q.ax);
+  let avoid = list.length ? layoutSelPanels(list) : null;
+  if (!avoid) hideSelPanels();
 
-  if (hovered && hovered !== selected && ptr) {
+  if (hovered && !sel.has(hovered) && ptr) {
     placeTip(tipH, lineH, hovered, [ptr.x, ptr.y], avoid);
     dotEl.setAttribute('cx', ptr.x); dotEl.setAttribute('cy', ptr.y);
     dotEl.style.display = 'block';
@@ -1351,14 +1655,17 @@ function layoutCallouts(){
     tipH.style.display = 'none'; hideLine(lineH); dotEl.style.display = 'none';
   }
   leadEl.style.display =
-    (tipS.style.display === 'none' && tipH.style.display === 'none') ? 'none' : 'block';
+    (selPanels.every(e => e.style.display === 'none') && tipH.style.display === 'none')
+      ? 'none' : 'block';
 }
 
 function setHover(name){
   if (name === hovered) return;
-  const prev = hovered;
+  const prev = [...hoverSet];
   hovered = name;
-  paint(prev); paint(name);
+  hoverSet = new Set(name ? groupOf(name) : []);
+  for (const n of prev) paint(n);
+  for (const n of hoverSet) paint(n);
   if (name) fillTip(tipH, name);
 }
 
@@ -1495,7 +1802,7 @@ renderer.domElement.addEventListener('pointerup', (e)=>{
   tap = null;
   if (!quick || pinch !== null) return;
   const n = pickAt(x, y);
-  setSelected(n && n !== selected ? n : null);
+  if (n) setSel(n, !sel.has(n)); else clearSelection();   // 何も無い所を叩くと全部外す
 });
 renderer.domElement.addEventListener('pointercancel', ()=>{ tap = null; });
 
@@ -1548,6 +1855,7 @@ const modeEl = document.getElementById('mode');
 const posBlock = document.getElementById('posBlock');
 const listEl = document.getElementById('list');
 const panelEl = document.getElementById('panel');
+const noteEl = document.getElementById('note');
 
 function closeSheets(){
   listEl.classList.remove('open'); panelEl.classList.remove('open');
@@ -1572,8 +1880,9 @@ function relayout(){
     document.getElementById('barMode').appendChild(takeHome(modeEl));
     document.getElementById('barPos').insertBefore(takeHome(posBlock),
                                                   document.getElementById('nextS'));
+    barEl.appendChild(takeHome(noteEl));          // 注意書きはバーの最後の行にする
   } else if (homes.size) {
-    goHome(modeEl); goHome(posBlock);
+    goHome(modeEl); goHome(posBlock); goHome(noteEl);
   }
   if (!narrow) closeSheets();
   barEl.style.display = narrow ? 'flex' : 'none';
@@ -1587,9 +1896,13 @@ addEventListener('orientationchange', relayout);
    これが無いと「モデルが本当に切り替わったか」を外から観測できない。 */
 window.__state = () => ({
   atlas: state.atlas, plane: state.plane, side: state.side, mode: state.mode,
-  half: state.half, cortex: state.cortex,
+  half: state.half, cortex: state.cortex, overlay: state.overlay, cut: state.cut,
   touch: TOUCH.matches, narrow: NARROW.matches,
-  selected, camDist: +camera.position.distanceTo(controls.target).toFixed(2),
+  selected, selection: [...sel],
+  // 選択中のアンカー（world RAS mm）。正中かどうかを画面ではなく座標で確かめる口
+  anchorWorld: selected && anchorPoint(selected)
+    ? anchorPoint(selected).toArray().map(v => +v.toFixed(2)) : null,
+  camDist: +camera.position.distanceTo(controls.target).toFixed(2),
   shown: [...meshByName.values()].filter(o => o.visible).length,
   clip: state.clip, sliceVisible: sliceMesh.visible, world: { ...state.world },
   nodes: meshByName.size, models: [...models.keys()],
@@ -1614,9 +1927,12 @@ atlasReady.then(()=>{
   controls.update();
   updateHover();
   layoutCallouts();
-  if (selected) {                       // 選択中の領域だけ明るさを揺らす
-    const m = meshByName.get(selected);
-    if (m) m.material.emissiveIntensity = 1.1 + .5 * Math.sin(performance.now() / 380);
+  if (sel.size) {                       // 選択中の領域だけ明るさを揺らす
+    const k = 1.1 + .5 * Math.sin(performance.now() / 380);
+    for (const n of sel) {
+      const m = meshByName.get(n);
+      if (m) m.material.emissiveIntensity = k;
+    }
   }
   renderer.render(scene, camera);
 })();

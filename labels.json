@@ -2375,11 +2375,11 @@
     }
   },
   "Left-BA": {
-    "ja": "左脳底動脈",
+    "ja": "脳底動脈",
     "ja_short": "脳底動脈",
-    "en": "Left Basilar",
+    "en": "Basilar",
     "en_short": "Basilar",
-    "side": "L",
+    "side": null,
     "base": "BA",
     "group": "椎骨脳底動脈",
     "color": [
@@ -2388,18 +2388,19 @@
       200
     ],
     "atlas": "arterial",
+    "merge": "BA",
     "slice": {
-      "x": -5.34,
+      "x": 1.3,
       "y": -32.59,
-      "z": -35.63
+      "z": -35.26
     }
   },
   "Right-BA": {
-    "ja": "右脳底動脈",
+    "ja": "脳底動脈",
     "ja_short": "脳底動脈",
-    "en": "Right Basilar",
+    "en": "Basilar",
     "en_short": "Basilar",
-    "side": "R",
+    "side": null,
     "base": "BA",
     "group": "椎骨脳底動脈",
     "color": [
@@ -2408,10 +2409,11 @@
       200
     ],
     "atlas": "arterial",
+    "merge": "BA",
     "slice": {
-      "x": 8.68,
+      "x": 1.3,
       "y": -32.59,
-      "z": -35.63
+      "z": -35.26
     }
   },
   "Left-SCA": {
